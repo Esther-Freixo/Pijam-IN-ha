@@ -13,3 +13,79 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+
+model Feedback {
+  id          String  @id @default(uuid())
+  name        String
+  description String
+  rating      Float
+}
+
+model Pajama {
+  id           String        @id @default(uuid())
+  name         String
+  description  String
+  image        String
+  price        Float
+  season       String
+  type         String
+  gender       String
+  favorite     Boolean
+  on_sale      Boolean
+  sale_percent Float?        
+  sizes        PajamaSize[]  
+  sales        Sale_pajamas[] 
+}
+
+model PajamaSize {
+  id             String  @id @default(uuid())
+  stock_quantity Int
+  size           String
+  pajamaId       String
+  pajama         Pajama @relation(fields: [pajamaId], references: [id])
+}
+
+model Sale {
+  id              String         @id @default(uuid())
+  buyer_name      String
+  cpf             String
+  price           Float
+  payment_method  String
+  installments    Int            @default(1)
+  card_number     String?        
+  addressId       String
+  address         Address        @relation(fields: [addressId], references: [id])
+  pajamas         Sale_pajamas[]  
+}
+
+model Sale_pajamas {
+  id        String  @id @default(uuid())
+  quantity  Int
+  price     Float
+
+  saleId    String
+  pajamaId  String
+  sale      Sale    @relation(fields: [saleId], references: [id])
+  pajama    Pajama  @relation(fields: [pajamaId], references: [id])
+}
+
+model Address {
+  id           String  @id @default(uuid())
+  zip_code     String
+  state        String
+  city         String
+  neighborhood String
+  address      String
+  number       String
+  sales        Sale[]
+}
+
+
+model User {
+  id       String  @id @default(uuid())
+  name     String
+  username String
+  email    String  @unique
+  password String
+}
