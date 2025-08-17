@@ -2,6 +2,9 @@ import { PrismaClient } from '@prisma/client';
 import fastify from 'fastify'
 import { userRoutes } from './http/controllers/users/routes.ts';
 import { ZodError } from 'zod';
+import fastifyCors from '@fastify/cors';
+import fastifyJwt from '@fastify/jwt';
+import { env } from './env/index.ts';
 
 export const app = fastify();
 export const prisma = new PrismaClient();
@@ -12,6 +15,8 @@ app.register(fastifyCors, {
   allowedHeaders: ['Content-type', 'Authorization'],
   credentials: true
 })
+
+app.register(fastifyJwt, { secret: env.JWT_SECRET });
 
 app.register(userRoutes);
 
