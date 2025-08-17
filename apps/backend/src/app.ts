@@ -6,6 +6,13 @@ import { ZodError } from 'zod';
 export const app = fastify();
 export const prisma = new PrismaClient();
 
+app.register(fastifyCors, {
+  origin: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-type', 'Authorization'],
+  credentials: true
+})
+
 app.register(userRoutes);
 
 app.setErrorHandler((error, resquest, reply) => {
