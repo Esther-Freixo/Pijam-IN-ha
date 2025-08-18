@@ -1,0 +1,46 @@
+.header {
+  background-color: var(--vermelho400);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logoContainer > img {
+  width: 6.4706rem;
+  height: 7.09rem;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  color: var(--branco);
+  gap: 2.3125rem;
+}
+
+.links > p {
+  font-family: var(--font-nunitoSans);
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.productsIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.productsIcons > img {
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.userIcon > img {
+  cursor: pointer;
+}
