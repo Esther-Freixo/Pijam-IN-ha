@@ -3,8 +3,11 @@ import styles from "./styles.module.css"
 import banner1 from "../../assets/banners/bannerNatal.png"
 import banner2 from "../../assets/banners/bannerValentines.png"
 import banner3 from "../../assets/banners/bannerGrupo.png"
-import logo1 from "../../assets/logo/logo1.png"
+import logo1 from "../../assets/logo/logoazul.png"
 import Carrossel from "../../components/CarrosselComp"
+import pessoas from "../../assets/icons/people.png"
+import caminhao from "../../assets/icons/caminhaodelivery.png"
+import pijama from "../../assets/icons/pijamafeminino.png"
 
 const fotosDoCarrossel = [
   banner1,
@@ -19,7 +22,7 @@ export default function Home() {
         <>
             <div className={styles.areaAzul}>
                 <img src={logo1} alt="Logo" />
-                <p>Se os lobos soubessem desse conforto, nem sopravam casas, iam dormir!</p>
+                <p className={styles.paragrafoLogo}>Se os lobos soubessem desse conforto, nem sopravam casas, iam dormir!</p>
             </div>
 
             <div className={styles.carrossel}>
@@ -27,16 +30,33 @@ export default function Home() {
             </div>
 
             <div className={styles.areaBranca}>
+                <div className={styles.info}>
+                    <div className={styles.fotoEtexto}>
+                        <img src={pijama} alt="pijama" />
+                        <p id={styles.pijamatxt}>Pijamas confortáveis e com tecnologia</p>
+                    </div>
+                    <div className={styles.fotoEtexto}>
+                        <img src={pessoas} alt="pessoas" />
+                        <p id={styles.pessoastxt}>Modelos para todas as idades e tamanhos</p>
+                    </div>
+                    <div className={styles.fotoEtexto}>
+                        <img src={caminhao} alt="caminhao" />
+                        <p id={styles.caminhaotxt}>Frete grátis em todo o Brasil e exterior</p>
+                    </div>
+                </div>
                 <div>
-                    <div>
+                    <h1 className={styles.tituloSecao}>Nossas últimas promoções!</h1>
 
-                    </div>
-                    <div>
-                        
-                    </div>
-                    <div>
-                        
-                    </div>
+                </div>
+                <div>
+                    <h1 className={styles.tituloSecao}>Feedbacks</h1>
+                    
+                </div>
+
+                <div className={styles.feedbackSecao}>
+                    <a className={styles.botao}> {/*mudar para fomato de Link quando criar rota*/}
+                        Também quero dar um feedback!
+                    </a>
                 </div>
             </div>
         </>
