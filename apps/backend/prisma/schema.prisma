@@ -14,6 +14,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum SizeType {
+  PP
+  P
+  M
+  G
+  GG
+}
 
 model Feedback {
   id          String  @id @default(uuid())
@@ -36,6 +43,8 @@ model Pajama {
   sale_percent Float?        
   sizes        PajamaSize[]  
   sales        Sale_pajamas[] 
+
+  @@map("pajamas")
 }
 
 model PajamaSize {
@@ -44,6 +53,8 @@ model PajamaSize {
   size           String
   pajamaId       String
   pajama         Pajama @relation(fields: [pajamaId], references: [id])
+
+  @@map("pajamasSize")
 }
 
 model Sale {

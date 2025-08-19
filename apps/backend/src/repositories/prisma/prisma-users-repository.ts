@@ -1,5 +1,5 @@
 import type { UsersRepository } from '../users-repository.ts';
-import { prisma } from './../../app.ts';
+import { prisma } from "../../lib/prisma.ts"
 import { Prisma } from "@prisma/client";
 
 export class PrismaUsersRepository implements UsersRepository {

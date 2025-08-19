@@ -7,7 +7,6 @@ import fastifyJwt from '@fastify/jwt';
 import { env } from './env/index.ts';
 
 export const app = fastify();
-export const prisma = new PrismaClient();
 
 app.register(fastifyCors, {
   origin: true,
