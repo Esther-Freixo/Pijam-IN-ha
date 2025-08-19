@@ -1,0 +1,26 @@
+.section {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.button {
+  border: none;
+  border-radius: 0.0919rem;
+  width: 3.125rem;
+  height: 3.2188rem;
+  background-color: var(--azul200);
+  color: var(--branco);
+  font-size: 1.25rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: auto;
+}
+
+.selected {
+  background-color: var(--azul0);
+  color: var(--azul300);
+}
