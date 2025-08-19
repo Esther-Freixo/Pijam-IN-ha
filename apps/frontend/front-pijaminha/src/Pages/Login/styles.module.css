@@ -1,6 +1,6 @@
 .main {
     background-image: url('../../assets/backgorund/fundovermelho.png');
-    background-size: cover;
+    background-size: 120%;
     background-color: var(--branco);
     background-position: center;
     display: flex;
@@ -128,6 +128,10 @@
 .botaoCadastrar {
     width: 220px;
     height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     margin-top: 48px;
     color: var(--branco);
     font-family: 'Montserrat';
