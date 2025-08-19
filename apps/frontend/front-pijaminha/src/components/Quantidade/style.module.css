@@ -1,0 +1,28 @@
+.quantity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8125rem;
+  font-family: var(--font-nunitoSans);
+}
+
+.quantity > p {
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.quantityControls {
+  display: flex;
+  flex-direction: row;
+  width: 10.6875rem;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0.6425rem 0.5rem 0.6425rem 0.5rem;
+  border-radius: 0.125rem;
+  border: solid 0.0625rem #565656;
+}
+
+.quantityControls > img {
+  cursor: pointer;
+}
