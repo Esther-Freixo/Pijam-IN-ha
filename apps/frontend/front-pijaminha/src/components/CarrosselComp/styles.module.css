@@ -1,5 +1,4 @@
 .container {
-  display: flex;
   height: 410px;
   position: relative;
 }
@@ -9,43 +8,21 @@
   height: auto;
 }
 
-.botaoAnterior,
-.botaoProximo {
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 45%;
+.container .slick-prev,
+.container .slick-next {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
 }
 
-.botaoAnterior {
+.container .slick-prev {
   left: 20px;
 }
 
-.botaoProximo {
+.container .slick-next {
   right: 20px;
 }
 
-.conteudoBotao {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-}
-
-.circuloSeta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid rgb(255, 255, 255);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.seta {
-  width: 20px;
-  height: 35px;
+.container .slick-dots {
+  bottom: 15px;
 }
