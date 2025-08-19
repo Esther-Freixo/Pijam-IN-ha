@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Feedback from "./Pages/Feedback";
 import Cadastro from "./Pages/Cadastro";
+import Pijama from "./Pages/Pijama";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "feedback", element: <Feedback /> },
       { path: "cadastro", element: <Cadastro /> },
+      { path: "pijama", element: <Pijama /> },
     ],
   },
 ]);
