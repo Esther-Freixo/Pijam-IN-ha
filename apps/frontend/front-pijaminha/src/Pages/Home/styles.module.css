@@ -106,5 +106,6 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
     font-weight: 400;
+    text-decoration: none;
     cursor: pointer;
 }

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css"
 import banner1 from "../../assets/banners/bannerNatal.png"
 import banner2 from "../../assets/banners/bannerValentines.png"
@@ -54,9 +55,9 @@ export default function Home() {
                 </div>
 
                 <div className={styles.feedbackSecao}>
-                    <a className={styles.botao}> {/*mudar para fomato de Link quando criar rota*/}
+                    <Link className={styles.botao} to="/feedback">
                         Também quero dar um feedback!
-                    </a>
+                    </Link>
                 </div>
             </div>
         </>
