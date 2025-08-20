@@ -18,8 +18,6 @@ export class PrismaFeedbackRepository implements FeedbacksRepository {
         return feedback;
     }
 
-
-
     async delete(id: string) {
 
         const feedbackExiste = await this.findById(id)
@@ -36,9 +34,9 @@ export class PrismaFeedbackRepository implements FeedbacksRepository {
 
     async getALL(){
 
-        const users = await prisma.user.findMany()
+        const feedbacks = await prisma.feedback.findMany()
 
-        return users
+        return feedbacks
 
     }
 }

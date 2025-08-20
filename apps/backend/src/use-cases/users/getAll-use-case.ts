@@ -12,6 +12,6 @@ export class GetUsersUseCase {
     const users = await this.usersRepository.getAll();
 
 
-    return { users };
+    return { users: users };
   }
 }
