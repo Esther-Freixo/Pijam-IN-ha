@@ -23,12 +23,11 @@ export default function Home() {
                 <img src={logo1} alt="Logo" />
                 <p className={styles.paragrafoLogo}>Se os lobos soubessem desse conforto, nem sopravam casas, iam dormir!</p>
             </div>
-
-            <div className={styles.carrossel}>
-                <Carrossel images={fotosDoCarrossel} />
-            </div>
-
             <div className={styles.areaBranca}>
+                <div className={styles.carrossel}>
+                    <Carrossel images={fotosDoCarrossel} />
+                </div>
+
                 <div className={styles.info}>
                     <div className={styles.fotoEtexto}>
                         <img src={pijama} alt="pijama" />
