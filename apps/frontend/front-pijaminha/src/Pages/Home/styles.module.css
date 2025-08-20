@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     background-image: url('../../assets/backgorund/fundobrancocorreto.png');
-    background-size: cover;
+    background-size: 100%;
     background-color: var(--azul100);
     background-position: center;
     padding: 40px 20px;

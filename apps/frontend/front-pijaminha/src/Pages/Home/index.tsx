@@ -1,22 +1,20 @@
-import React from "react"
+import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./styles.module.css"
-import banner1 from "../../assets/banners/bannerNatal.png"
-import banner2 from "../../assets/banners/bannerValentines.png"
-import banner3 from "../../assets/banners/bannerGrupo.png"
-import logo1 from "../../assets/logo/logoazul.png"
-import Carrossel from "../../components/CarrosselComp"
-import pessoas from "../../assets/icons/people.png"
-import caminhao from "../../assets/icons/caminhaodelivery.png"
-import pijama from "../../assets/icons/pijamafeminino.png"
+import styles from "./styles.module.css";
+import banner1 from "../../assets/banners/bannerNatal.png";
+import banner2 from "../../assets/banners/bannerValentines.png";
+import banner3 from "../../assets/banners/bannerGrupo.png";
+import logo1 from "../../assets/logo/logoazul.png";
+import Carrossel from "../../components/CarrosselComp";
+import pessoas from "../../assets/icons/people.png";
+import caminhao from "../../assets/icons/caminhaodelivery.png";
+import pijama from "../../assets/icons/pijamafeminino.png";
 
 const fotosDoCarrossel = [
   banner1,
   banner2,
   banner3
 ];
-
-
 
 export default function Home() {
     return (
@@ -25,12 +23,11 @@ export default function Home() {
                 <img src={logo1} alt="Logo" />
                 <p className={styles.paragrafoLogo}>Se os lobos soubessem desse conforto, nem sopravam casas, iam dormir!</p>
             </div>
-
-            <div className={styles.carrossel}>
-                <Carrossel images={fotosDoCarrossel} />
-            </div>
-
             <div className={styles.areaBranca}>
+                <div className={styles.carrossel}>
+                    <Carrossel images={fotosDoCarrossel} />
+                </div>
+
                 <div className={styles.info}>
                     <div className={styles.fotoEtexto}>
                         <img src={pijama} alt="pijama" />
@@ -47,13 +44,10 @@ export default function Home() {
                 </div>
                 <div>
                     <h1 className={styles.tituloSecao}>Nossas últimas promoções!</h1>
-
                 </div>
                 <div>
                     <h1 className={styles.tituloSecao}>Feedbacks</h1>
-                    
                 </div>
-
                 <div className={styles.feedbackSecao}>
                     <Link className={styles.botao} to="/feedback">
                         Também quero dar um feedback!
@@ -61,5 +55,5 @@ export default function Home() {
                 </div>
             </div>
         </>
-    )
+    );
 }
