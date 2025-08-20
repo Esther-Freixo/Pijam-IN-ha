@@ -9,6 +9,7 @@ import { env } from './env/index.ts';
 import { authRoutes } from './http/controllers/auth/routes.ts';
 
 export const app = fastify();
+export const prisma = new PrismaClient();
 
 app.register(fastifyCors, {
   origin: true,
