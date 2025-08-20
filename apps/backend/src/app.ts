@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import fastify from 'fastify';
 import { userRoutes } from './http/controllers/users/routes.ts';
 import { pajamasRoutes } from './http/controllers/pajamas/routes.ts';
+import { salesRoutes } from './http/controllers/sales/routes.ts';
 import { ZodError } from 'zod';
 import fastifyCors from '@fastify/cors';
 import fastifyJwt from '@fastify/jwt';
@@ -22,6 +23,7 @@ app.register(fastifyJwt, { secret: env.JWT_SECRET });
 // registra as outras routes
 app.register(userRoutes);
 app.register(pajamasRoutes);
+app.register(salesRoutes);
 
 app.setErrorHandler((error, resquest, reply) => {
     if (error instanceof ZodError) {
