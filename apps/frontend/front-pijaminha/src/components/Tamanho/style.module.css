@@ -1,9 +1,3 @@
-.section {
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
 .button {
   border: none;
   border-radius: 0.0919rem;
