@@ -1,13 +1,14 @@
-import { type Pajama, type PajamaSize, Prisma } from "@prisma/client";
+import { Pajama, Prisma, PajamaSize, SizeType } from '@prisma/client'
 
-export interface FindPajamasComplete extends Pajama{
-    pajamaSize: PajamaSize[];
+export interface PajamaWithSizes extends Pajama {
+  sizes: PajamaSize[]
 }
 
-export interface PajamasRepository{
-    create(data: Prisma.PajamaCreateInput): Promise <Pajama>;
-    update(id: number, data: Prisma.PajamaUpdateInput): Promise<Pajama>;
-    get(id: number): Promise<FindPajamaWithDetails | null>;
-    delete(id: number): Promise<void>;
-    list(): Promise<FindPajamasComplete[]>
+export interface PajamasRepository {
+  create(data: Prisma.PajamaCreateInput): Promise<Pajama>
+  update(id: string, data: Prisma.PajamaUpdateInput): Promise<Pajama>
+  updateStock(pajamaId: string, size: SizeType, newQuantity: number): Promise<void> // Adicionado
+  findById(id: string): Promise<PajamaWithSizes | null>
+  delete(id: string): Promise<void>
+  listAll(): Promise<PajamaWithSizes[]>
 }
