@@ -42,4 +42,18 @@ export class PrismaUsersRepository implements UsersRepository {
 
         return user
     }
+
+    async delete(id: string) {
+
+        const userExists = await this.findById(id)
+        if (!userExists) { return null }
+
+        const user = await prisma.user.delete({
+            where: {
+                id: id
+            }
+        })
+
+        return user
+    }
 }
