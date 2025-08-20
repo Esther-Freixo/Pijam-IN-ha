@@ -1,5 +1,5 @@
 import { PajamasRepository } from '../../repositories/pajamas-repository.ts'
-import { ResourceNotFoundError } from '../../errors/resource-not-find-error.ts'
+import { ResourceNotFoundError } from '../../errors/resource-not-found-error.ts'
 import { SizeType } from '@prisma/client'
 
 interface UpdatePajamaStockUseCaseRequest {
