@@ -14,13 +14,19 @@
 .quantityControls {
   display: flex;
   flex-direction: row;
-  width: 10.6875rem;
+  width: 10rem;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 0.6425rem 0.5rem 0.6425rem 0.5rem;
+  padding: 0.65rem 0.5rem 0.65rem 0.5rem;
   border-radius: 0.125rem;
   border: solid 0.0625rem #565656;
+  background-color: var(--branco);
+}
+
+.quantityControls > p {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .quantityControls > img {
