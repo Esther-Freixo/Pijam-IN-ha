@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import setaE from '../../assets/buttons/btnSetaEsquerda.png';
-import setaD from '../../assets/buttons/btnSetaDireita.png';
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import styles from './styles.module.css';
 
 interface CarrosselProps {
@@ -8,41 +9,28 @@ interface CarrosselProps {
 }
 
 const Carrossel: React.FC<CarrosselProps> = ({ images }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-
-  const handleNext = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
   };
 
   return (
     <div className={styles.container}>
-      <button className={styles.botaoAnterior} onClick={handlePrev}>
-        <div className={styles.conteudoBotao}>
-          <div className={styles.circuloSeta}>
-            <img src={setaE} alt="Anterior" className={styles.seta} />
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className={styles.imagem}
+            />
           </div>
-        </div>
-      </button>
-
-      <img
-        src={images[currentImageIndex]}
-        alt={`Slide ${currentImageIndex + 1}`}
-        className={styles.imagem}
-      />
-
-      <button className={styles.botaoProximo} onClick={handleNext}>
-        <div className={styles.conteudoBotao}>
-          <div className={styles.circuloSeta}>
-            <img src={setaD} alt="Próximo" className={styles.seta} />
-          </div>
-        </div>
-      </button>
+        ))}
+      </Slider>
     </div>
   );
 };

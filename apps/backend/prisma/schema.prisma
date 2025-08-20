@@ -11,9 +11,16 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
+enum SizeType {
+  PP
+  P
+  M
+  G
+  GG
+}
 
 model Feedback {
   id          String  @id @default(uuid())
@@ -36,14 +43,18 @@ model Pajama {
   sale_percent Float?        
   sizes        PajamaSize[]  
   sales        Sale_pajamas[] 
+
+  @@map("pajamas")
 }
 
 model PajamaSize {
   id             String  @id @default(uuid())
   stock_quantity Int
-  size           String
+  size           SizeType
   pajamaId       String
-  pajama         Pajama @relation(fields: [pajamaId], references: [id])
+  pajama         Pajama @relation(fields: [pajamaId], references: [id], onDelete: Cascade)
+
+  @@map("pajamasSize")
 }
 
 model Sale {
