@@ -22,7 +22,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <div className={styles.container}>
-      {/* Barra de pesquisa */}
       <div className={styles.searchBox}>
         <input
           type="text"
@@ -36,7 +35,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         </button>
       </div>
 
-      {/* Filtros */}
       <div className={styles.filters}>
         <select value={genero} onChange={(e) => setGenero(e.target.value)}>
           <option>Gênero</option>

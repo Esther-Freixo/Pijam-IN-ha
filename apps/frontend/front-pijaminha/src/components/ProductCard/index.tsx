@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./styles.module.css";
-// IMPORTANTE: Importe os ícones aqui primeiro
 import coracaoIcon from "../../assets/icons/coracaoOff.png";
 import descontoIcon from "../../assets/icons/desconto.png";
 
@@ -27,12 +26,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className={styles.imageContainer}>
         <img src={imagem} alt={nome} className={styles.image} />
         <div className={styles.heartIcon}>
-          {/* Use a variável importada aqui */}
           <img src={coracaoIcon} alt="Coração" />
         </div>
         {precoPromocional && (
           <div className={styles.discountIcon}>
-            {/* Use a variável importada aqui */}
             <img src={descontoIcon} alt="Desconto" />
           </div>
         )}

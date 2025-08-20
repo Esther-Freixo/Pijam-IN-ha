@@ -12,6 +12,7 @@ interface Filtros {
   estacao: string;
 }
 
+
 export default function Lista_Pijamas() {
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [filtrosDeBusca, setFiltrosDeBusca] = useState<Filtros>({

@@ -194,7 +194,10 @@
     "nome": "Pijama para Bebê",
     "preco": 69.9,
     "precoPromocional": 54.9,
-    "imagem": "src/assets/pijama/pijama.png"
+    "imagem": "src/assets/pijama/pijama.png",
+     "genero": "feminino",
+    "tipo": "infantil",
+    "estacao": "verao"
   },
   {
     "id": 22,
@@ -391,7 +394,10 @@
     "nome": "Pijama para Bebê",
     "preco": 69.9,
     "precoPromocional": 54.9,
-    "imagem": "src/assets/pijama/pijama.png"
+    "imagem": "src/assets/pijama/pijama.png",
+    "genero": "feminino",
+    "tipo": "adulto",
+    "estacao": "primavera"
   },
   {
     "id": 43,

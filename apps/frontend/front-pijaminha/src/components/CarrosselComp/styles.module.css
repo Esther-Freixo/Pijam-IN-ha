@@ -1,4 +1,4 @@
-/* Força os slides a não terem espaço entre si */
+
 .container .slick-slide {
   display: flex !important;
   justify-content: center;
@@ -7,10 +7,10 @@
   margin: 0 !important;
 }
 
-/* Faz a imagem ocupar toda a largura do slide */
+
 .imagem {
   width: 100% !important;
   height: 410px;
-  object-fit: cover; /* Mantém proporção, cortando excesso */
+  object-fit: cover; 
   display: block;
 }
