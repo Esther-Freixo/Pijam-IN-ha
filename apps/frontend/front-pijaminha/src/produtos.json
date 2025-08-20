@@ -1,0 +1,449 @@
+[
+  {
+    "id": 1,
+    "nome": "Pijama Feminino Bolinhas",
+    "preco": 99.90,
+    "precoPromocional": 67.06,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 2,
+    "nome": "Pijama Masculino Listrado",
+    "preco": 129.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "pijama",
+    "estacao": "outono"
+  },
+  {
+    "id": 3,
+    "nome": "Pijama Infantil Estrela",
+    "preco": 78.90,
+    "precoPromocional": 59.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "infantil",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+  {
+    "id": 4,
+    "nome": "Pijama Unissex de Cetim",
+    "preco": 159.90,
+    "precoPromocional": 119.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "unissex",
+    "tipo": "pijama",
+    "estacao": "primavera"
+  },
+  {
+    "id": 5,
+    "nome": "Pijama Moletom C/ Capuz",
+    "preco": 189.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+  {
+    "id": 6,
+    "nome": "Pijama Curto Floral",
+    "preco": 89.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 7,
+    "nome": "Pijama de Seda Clássico",
+    "preco": 249.90,
+    "precoPromocional": 199.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 8,
+    "nome": "Camisola de Algodão",
+    "preco": 79.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "camisola",
+    "estacao": "primavera"
+  },
+  {
+    "id": 9,
+    "nome": "Pijama Térmico Xadrez",
+    "preco": 169.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+  {
+    "id": 10,
+    "nome": "Short Doll de Renda",
+    "preco": 119.90,
+    "precoPromocional": 89.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "short-doll",
+    "estacao": "verao"
+  },
+  {
+    "id": 11,
+    "nome": "Robe de Microfibra",
+    "preco": 149.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "unissex",
+    "tipo": "robe",
+    "estacao": "inverno"
+  },
+  {
+    "id": 12,
+    "nome": "Pijama de Super Herói",
+    "preco": 89.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "infantil",
+    "tipo": "pijama",
+    "estacao": "outono"
+  },
+  {
+    "id": 13,
+    "nome": "Pijama Longo de Algodão",
+    "preco": 109.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+  {
+    "id": 14,
+    "nome": "Short Masculino Esportivo",
+    "preco": 69.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "short",
+    "estacao": "verao"
+  },
+  {
+    "id": 15,
+    "nome": "Pijama de Inverno Lã",
+    "preco": 209.90,
+    "precoPromocional": 159.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "unissex",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+  {
+    "id": 16,
+    "nome": "Camisola com Estampa",
+    "preco": 89.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "camisola",
+    "estacao": "primavera"
+  },
+  {
+    "id": 17,
+    "nome": "Pijama de Malha Fria",
+    "preco": 105.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 18,
+    "nome": "Short Doll de Bolinhas",
+    "preco": 79.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "short-doll",
+    "estacao": "verao"
+  },
+  {
+    "id": 19,
+    "nome": "Pijama Curto Unissex",
+    "preco": 95.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "unissex",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 20,
+    "nome": "Robe de Cetim Curto",
+    "preco": 139.90,
+    "precoPromocional": 109.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "robe",
+    "estacao": "primavera"
+  },
+  {
+    "id": 21,
+    "nome": "Pijama para Bebê",
+    "preco": 69.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "infantil",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 22,
+    "nome": "Pijama Masculino Seda",
+    "preco": 229.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "pijama",
+    "estacao": "outono"
+  },
+  {
+    "id": 23,
+    "nome": "Camisola de Liganete",
+    "preco": 89.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "camisola",
+    "estacao": "verao"
+  },
+  {
+    "id": 24,
+    "nome": "Pijama de Flanela",
+    "preco": 179.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "unissex",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+
+  {
+    "id": 25,
+    "nome": "Pijama Feminino Bolinhas",
+    "preco": 99.90,
+    "precoPromocional": 67.06,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 26,
+    "nome": "Pijama Masculino Listrado",
+    "preco": 129.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "pijama",
+    "estacao": "outono"
+  },
+  {
+    "id": 27,
+    "nome": "Pijama Infantil Estrela",
+    "preco": 78.90,
+    "precoPromocional": 59.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "infantil",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+  {
+    "id": 28,
+    "nome": "Pijama Unissex de Cetim",
+    "preco": 159.90,
+    "precoPromocional": 119.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "unissex",
+    "tipo": "pijama",
+    "estacao": "primavera"
+  },
+  {
+    "id": 29,
+    "nome": "Pijama Moletom C/ Capuz",
+    "preco": 189.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+  {
+    "id": 30,
+    "nome": "Pijama Curto Floral",
+    "preco": 89.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 31,
+    "nome": "Pijama de Seda Clássico",
+    "preco": 249.90,
+    "precoPromocional": 199.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 32,
+    "nome": "Camisola de Algodão",
+    "preco": 79.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "camisola",
+    "estacao": "primavera"
+  },
+  {
+    "id": 33,
+    "nome": "Pijama Térmico Xadrez",
+    "preco": 169.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+  {
+    "id": 34,
+    "nome": "Short Doll de Renda",
+    "preco": 119.90,
+    "precoPromocional": 89.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "short-doll",
+    "estacao": "verao"
+  },
+  {
+    "id": 35,
+    "nome": "Robe de Microfibra",
+    "preco": 149.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "unissex",
+    "tipo": "robe",
+    "estacao": "inverno"
+  },
+  {
+    "id": 36,
+    "nome": "Pijama de Super Herói",
+    "preco": 89.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "infantil",
+    "tipo": "pijama",
+    "estacao": "outono"
+  },
+  {
+    "id": 37,
+    "nome": "Pijama Longo de Algodão",
+    "preco": 109.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+  {
+    "id": 38,
+    "nome": "Short Masculino Esportivo",
+    "preco": 69.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "short",
+    "estacao": "verao"
+  },
+  {
+    "id": 39,
+    "nome": "Pijama de Inverno Lã",
+    "preco": 209.90,
+    "precoPromocional": 159.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "unissex",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  },
+  {
+    "id": 40,
+    "nome": "Camisola com Estampa",
+    "preco": 89.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "camisola",
+    "estacao": "primavera"
+  },
+  {
+    "id": 41,
+    "nome": "Pijama de Malha Fria",
+    "preco": 105.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 42,
+    "nome": "Short Doll de Bolinhas",
+    "preco": 79.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "short-doll",
+    "estacao": "verao"
+  },
+  {
+    "id": 43,
+    "nome": "Pijama Curto Unissex",
+    "preco": 95.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "unissex",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 44,
+    "nome": "Robe de Cetim Curto",
+    "preco": 139.90,
+    "precoPromocional": 109.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "robe",
+    "estacao": "primavera"
+  },
+  {
+    "id": 45,
+    "nome": "Pijama para Bebê",
+    "preco": 69.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "infantil",
+    "tipo": "pijama",
+    "estacao": "verao"
+  },
+  {
+    "id": 46,
+    "nome": "Pijama Masculino Seda",
+    "preco": 229.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "masculino",
+    "tipo": "pijama",
+    "estacao": "outono"
+  },
+  {
+    "id": 47,
+    "nome": "Camisola de Liganete",
+    "preco": 89.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "feminino",
+    "tipo": "camisola",
+    "estacao": "verao"
+  },
+  {
+    "id": 48,
+    "nome": "Pijama de Flanela",
+    "preco": 179.90,
+    "imagem": "/assets/pijama.png",
+    "genero": "unissex",
+    "tipo": "pijama",
+    "estacao": "inverno"
+  }
+]
