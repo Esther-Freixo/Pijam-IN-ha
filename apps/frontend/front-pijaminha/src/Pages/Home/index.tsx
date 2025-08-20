@@ -62,12 +62,12 @@ export default function Home() {
                     </div>
                 </div>
                 
-                <div>
-                    <h1 className={styles.tituloSecao}>Feedbacks</h1>
+                <div className={styles.promocoes}>
                     <ProductList produtos={promocoesDestaque} />
                 </div>
                 
                 <div className={styles.feedbackSecao}>
+                    <h1 className={styles.tituloSecao}>Feedbacks</h1>
                     <Link className={styles.botao} to="/feedback">
                         Também quero dar um feedback!
                     </Link>
