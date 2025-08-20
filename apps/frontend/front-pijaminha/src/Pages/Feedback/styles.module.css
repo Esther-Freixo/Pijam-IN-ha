@@ -1,6 +1,6 @@
 .main {
     background-image: url('../../assets/backgorund/fundovermelho.png');
-    background-size: cover;
+    background-size: 120%;
     background-color: var(--branco);
     background-position: center;
     display: flex;
