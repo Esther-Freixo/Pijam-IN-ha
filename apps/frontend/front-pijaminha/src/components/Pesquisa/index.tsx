@@ -39,7 +39,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       {/* Filtros */}
       <div className={styles.filters}>
         <select value={genero} onChange={(e) => setGenero(e.target.value)}>
-          <option>Todos</option>
+          <option>Gênero</option>
           <option>Unissex</option>
           <option>Masculino</option>
           <option>Feminino</option>
@@ -47,13 +47,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         </select>
 
         <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
-          <option>Todos</option>
+          <option>Tipo</option>
           <option>Adulto</option>
           <option>Infantil</option>
         </select>
 
         <select value={estacao} onChange={(e) => setEstacao(e.target.value)}>
-          <option>Todos</option>
+          <option>Estação</option>
           <option>Inverno</option>
           <option>Verão</option>
         </select>

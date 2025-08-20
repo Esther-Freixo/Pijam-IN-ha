@@ -20,7 +20,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div className={styles.card}>
-      <img src={imagem} alt={nome} className={styles.image} />
+        <img src={imagem} alt={nome} className={styles.image} />
+        <div>
+          
+        </div>
       <h3 className={styles.name}>{nome}</h3>
       {precoPromocional ? (
         <div className={styles.priceBox}>
