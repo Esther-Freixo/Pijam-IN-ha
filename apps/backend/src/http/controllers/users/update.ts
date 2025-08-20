@@ -1,10 +1,8 @@
-// src/http/controllers/users/update.ts
-
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { z } from 'zod';
-import { UpdateUserUseCase } from '@/use-cases/update-user-use-case';
-import { PrismaUsersRepository } from '@/repositories/prisma/prisma-users-repository';
 import { ResourceNotFoundError } from '../../../errors/resource-not-found-error.ts';
+import { PrismaUsersRepository } from '../../../repositories/prisma/prisma-users-repository.ts';
+import { UpdateUserUseCase } from '../../../use-cases/users/update-user-use-case.ts';
 
 
 const updateUserBodySchema = z.object({

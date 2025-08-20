@@ -6,6 +6,7 @@ import { ZodError } from 'zod';
 import fastifyCors from '@fastify/cors';
 import fastifyJwt from '@fastify/jwt';
 import { env } from './env/index.ts';
+import { authRoutes } from './http/controllers/auth/routes.ts';
 
 export const app = fastify();
 
@@ -20,6 +21,7 @@ app.register(fastifyJwt, { secret: env.JWT_SECRET });
 
 
 // registra as outras routes
+app.register(authRoutes)
 app.register(userRoutes);
 app.register(pajamasRoutes);
 
