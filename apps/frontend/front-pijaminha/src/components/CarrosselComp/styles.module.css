@@ -1,28 +1,16 @@
-.container {
-  height: 410px;
-  position: relative;
+/* Força os slides a não terem espaço entre si */
+.container .slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
+/* Faz a imagem ocupar toda a largura do slide */
 .imagem {
-  max-width: 100%;
-  height: auto;
-}
-
-.container .slick-prev,
-.container .slick-next {
-  z-index: 1;
-  width: 40px;
-  height: 40px;
-}
-
-.container .slick-prev {
-  left: 20px;
-}
-
-.container .slick-next {
-  right: 20px;
-}
-
-.container .slick-dots {
-  bottom: 15px;
+  width: 100% !important;
+  height: 410px;
+  object-fit: cover; /* Mantém proporção, cortando excesso */
+  display: block;
 }

@@ -5,6 +5,7 @@ import Login from "./Pages/Login";
 import Feedback from "./Pages/Feedback";
 import Cadastro from "./Pages/Cadastro";
 import Pijama from "./Pages/Pijama";
+import Lista_Pijamas from "./Pages/Lista_Pijamas";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "feedback", element: <Feedback /> },
       { path: "cadastro", element: <Cadastro /> },
       { path: "pijama", element: <Pijama /> },
+      { path: "lista_pijamas", element: <Lista_Pijamas /> },
     ],
   },
 ]);
