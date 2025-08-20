@@ -1,5 +1,9 @@
 import React from "react";
 import styles from "./styles.module.css";
+// IMPORTANTE: Importe os ícones aqui primeiro
+import coracaoIcon from "../../assets/icons/coracaoOff.png";
+import descontoIcon from "../../assets/icons/desconto.png";
+
 
 interface ProductCardProps {
   id: number;
@@ -20,19 +24,32 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div className={styles.card}>
+      <div className={styles.imageContainer}>
         <img src={imagem} alt={nome} className={styles.image} />
-        <div>
-          
+        <div className={styles.heartIcon}>
+          {/* Use a variável importada aqui */}
+          <img src={coracaoIcon} alt="Coração" />
         </div>
-      <h3 className={styles.name}>{nome}</h3>
-      {precoPromocional ? (
-        <div className={styles.priceBox}>
-          <p className={styles.oldPrice}>R$ {preco.toFixed(2)}</p>
-          <p className={styles.promoPrice}>R$ {precoPromocional.toFixed(2)}</p>
-        </div>
-      ) : (
-        <p className={styles.price}>R$ {preco.toFixed(2)}</p>
-      )}
+        {precoPromocional && (
+          <div className={styles.discountIcon}>
+            {/* Use a variável importada aqui */}
+            <img src={descontoIcon} alt="Desconto" />
+          </div>
+        )}
+      </div>
+      <div className={styles.contentBox}>
+        <h3 className={styles.name}>{nome}</h3>
+        {precoPromocional ? (
+          <div className={styles.priceBox}>
+            <p className={styles.oldPrice}>R$ {preco.toFixed(2)}</p>
+            <p className={styles.promoPrice}>
+              R$ {precoPromocional.toFixed(2)}
+            </p>
+          </div>
+        ) : (
+          <p className={styles.price}>R$ {preco.toFixed(2)}</p>
+        )}
+      </div>
     </div>
   );
 };

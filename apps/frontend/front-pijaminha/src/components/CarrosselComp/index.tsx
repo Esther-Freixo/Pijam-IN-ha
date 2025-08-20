@@ -16,6 +16,11 @@ const Carrossel: React.FC<CarrosselProps> = ({ images }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
+    autoplay: true,          // autoplay ativado
+    autoplaySpeed: 3000,     // troca a cada 3s
+    pauseOnHover: true,      // pausa no hover
+    pauseOnFocus: true,      // pausa no foco
+    cssEase: "ease-in-out",  // transição mais suave
   };
 
   return (

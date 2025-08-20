@@ -3,11 +3,12 @@
   display: flex;
   flex-direction: column;
   background: #9fc2d2;
-  text-align: center;
   box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 408px;
   height: 837px;
+  position: relative; /* Adicione esta linha */
+  overflow: hidden; /* Adicione esta linha para evitar que algo saia das bordas */
 }
 
 .card:hover {
@@ -15,18 +16,65 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
-/* Imagem */
+/* Contêiner da imagem e dos ícones */
+.imageContainer {
+  position: relative;
+}
+
+/* Ícones de coração e desconto */
+.heartIcon {
+  position: absolute;
+  top: 15px; /* Ajuste a distância do topo */
+  width: 64px; /* Largura do ícone */
+  height: 67px; /* Altura do ícone */
+  z-index: 10;
+}
+
+.discountIcon {
+  position: absolute;
+  top: 15px; /* Ajuste a distância do topo */
+  width: 83px; /* Largura do ícone */
+  height: 83px; /* Altura do ícone */
+  z-index: 10;
+}
+
+
+.heartIcon {
+  left: 15px; /* Posiciona no canto esquerdo */
+}
+
+.discountIcon {
+  right: 15px; /* Posiciona no canto direito */
+}
+
+.heartIcon img, .discountIcon img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Imagem principal */
 .image {
   width: 100%;
-  margin-bottom: 0.8rem;
+  display: block;
+}
+
+/* Caixa de conteúdo da parte inferior do card */
+.contentBox {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 1rem;
 }
 
 /* Nome do produto */
 .name {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 500;
   margin: 0.5rem 0;
-  color: #1a1a1a;
+  color: #ffffff;
+  text-transform: uppercase;
 }
 
 /* Preços */
@@ -39,19 +87,19 @@
 .oldPrice {
   text-decoration: line-through;
   color: #777;
-  font-size: 0.9rem;
+  font-size: 20px;
   margin: 0;
 }
 
 .promoPrice {
-  font-size: 1.2rem;
+  font-size: 40px;
   font-weight: bold;
-  color: #1a7431;
+  color: #ffffff;
   margin: 0.2rem 0 0;
 }
 
 .price {
-  font-size: 1.2rem;
+  font-size: 40px;
   font-weight: bold;
-  color: #222;
+  color: #ffffff;
 }
