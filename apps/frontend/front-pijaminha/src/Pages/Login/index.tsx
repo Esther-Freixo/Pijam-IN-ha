@@ -47,30 +47,35 @@ export default function Login() {
                     <p>Faça login para ter acesso aos pijamas dos seus <span>sonhos!</span></p>
                 </div>
                 <form onSubmit={handleSubmit(createUser)} className={styles.form}>
-                    <input 
-                        type="email" 
-                        placeholder='Usuário ou E-mail'
-                        {...register('emailOrUsuario')}
-                    />
-                    {errors.emailOrUsuario && <span>{errors.emailOrUsuario.message}</span>}
-                    <div className={styles.senha}>
+                    <div className={styles.inputGroup}>
                         <input 
-                            type={showPassword ? 'text' : 'password'} 
-                            placeholder='Senha' 
-                            {...register('password')}
+                            type="email" 
+                            placeholder='Usuário ou E-mail'
+                            {...register('emailOrUsuario')}
                         />
-                        {errors.password && <span>{errors.password.message}</span>}
-                        <button
-                            type="button"
-                            onClick={handleTogglePassword}
-                            className={styles.botaoOlho}
-                        >
-                            <img src={olho} alt="Mostrar/Ocultar Senha" />
-                        </button>
+                        {errors.emailOrUsuario && <span className={styles.error}>{errors.emailOrUsuario.message}</span>}
                     </div>
-                    {errors.root && <span>{errors.root.message}</span>}
-                    <p className={styles.linkEsqueciSenha}>Esqueci minha senha</p>
-                    <button disabled={isSubmitting} className={styles.botaoEntrar}>{isSubmitting ? 'Carregando...' : 'Cadastrar'}</button>
+
+                    <div className={styles.inputGroup}>
+                        <div className={styles.senha}>
+                            <input 
+                                type={showPassword ? 'text' : 'password'} 
+                                placeholder='Senha' 
+                                {...register('password')}
+                            />
+                            <button
+                                type="button"
+                                onClick={handleTogglePassword}
+                                className={styles.botaoOlho}
+                            >
+                                <img src={olho} alt="Mostrar/Ocultar Senha" />
+                            </button>
+                        </div>
+                        <p className={styles.linkEsqueciSenha}>Esqueci minha senha</p>
+                        {errors.password && <span className={styles.error}>{errors.password.message}</span>}
+                    </div>     
+                    <button disabled={isSubmitting} className={styles.botaoEntrar}>{isSubmitting ? 'Carregando...' : 'Entrar'}</button>
+                    {errors.root && <span className={styles.error}>{errors.root.message}</span>}
                 </form>
                 <div className={styles.linhaDivisoria}></div>
                 <Link className={styles.botaoCadastrar} to="/cadastro">CADASTRE-SE</Link>
