@@ -1,0 +1,10 @@
+
+.grid {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  column-gap: 56px;
+  row-gap: 64px;  
+  padding: 1rem;
+  justify-content: center;
+}
