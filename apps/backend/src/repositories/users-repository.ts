@@ -1,5 +1,4 @@
 import { Prisma, type User  } from "@prisma/client";
-import { promises } from "dns";
 
 export interface  UserUpdateInput {
     name?: string,
