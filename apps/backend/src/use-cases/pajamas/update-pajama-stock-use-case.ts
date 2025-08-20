@@ -22,6 +22,13 @@ export class UpdatePajamaStockUseCase {
       throw new ResourceNotFoundError()
     }
 
+    // Verifica se a size existe, só por precaução
+    const sizeRecord = pajamaExists.sizes.find((s) => s.size === size)
+
+    if (!sizeRecord) {
+      throw new ResourceNotFoundError()
+    }
+
     if (quantity < 0) {
       throw new Error('Quantidade de estoque não pode ser negativa')
     }

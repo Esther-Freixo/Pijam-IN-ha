@@ -50,7 +50,7 @@ model Pajama {
 model PajamaSize {
   id             String  @id @default(uuid())
   stock_quantity Int
-  size           String
+  size           SizeType
   pajamaId       String
   pajama         Pajama @relation(fields: [pajamaId], references: [id], onDelete: Cascade)
 
