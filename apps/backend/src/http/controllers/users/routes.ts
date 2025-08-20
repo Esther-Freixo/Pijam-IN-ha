@@ -1,10 +1,12 @@
 import type { FastifyInstance } from "fastify";
 import { register } from "./register.ts";
 import { authenticate } from "./authenticate.ts";
+import { update } from "./update.ts";
 
 export function userRoutes(app: FastifyInstance) {
     app.post('/authenticate', authenticate)
     app.post('/users', register)
+    app.patch('/users/:userId', update)
 
     
 }
