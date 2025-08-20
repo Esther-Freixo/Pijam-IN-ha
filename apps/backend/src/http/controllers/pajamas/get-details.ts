@@ -2,7 +2,7 @@ import { FastifyRequest, FastifyReply } from 'fastify'
 import { z } from 'zod'
 import { PrismaPajamasRepository } from '../../../repositories/prisma/prisma-pajamas-repository.ts'
 import { GetPajamaDetailsUseCase } from '../../../use-cases/pajamas/get-pajama-use-case.ts'
-import { ResourceNotFoundError } from '../../../errors/resource-not-find-error.ts'
+import { ResourceNotFoundError } from '../../../errors/resource-not-found-error.ts'
 
 export async function getDetails(request: FastifyRequest, reply: FastifyReply) {
 

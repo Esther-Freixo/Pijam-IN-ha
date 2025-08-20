@@ -2,7 +2,7 @@ import { FastifyRequest, FastifyReply } from 'fastify'
 import { z } from 'zod'
 import { PrismaPajamasRepository } from '../../../repositories/prisma/prisma-pajamas-repository.ts'
 import { UpdatePajamaStockUseCase } from '../../../use-cases/pajamas/update-pajama-stock-use-case.ts'
-import { ResourceNotFoundError } from '../../../errors/resource-not-find-error.ts'
+import { ResourceNotFoundError } from '../../../errors/resource-not-found-error.ts'
 import { SizeType } from '@prisma/client'
 
 export async function updateStock(request: FastifyRequest, reply: FastifyReply) {

@@ -2,7 +2,7 @@ import { FastifyRequest, FastifyReply } from 'fastify'
 import { z } from 'zod'
 import { PrismaPajamasRepository } from '../../../repositories/prisma/prisma-pajamas-repository.ts'
 import { DeletePajamaUseCase } from '../../../use-cases/pajamas/delete-pajama-use-case.ts'
-import { ResourceNotFoundError } from '../../../errors/resource-not-find-error.ts'
+import { ResourceNotFoundError } from '../../../errors/resource-not-found-error.ts'
 
 export async function remove(request: FastifyRequest, reply: FastifyReply) {
 
