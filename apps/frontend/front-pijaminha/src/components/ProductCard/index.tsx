@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
+// IMPORTANTE: Importe os ícones aqui primeiro
 import coracaoIcon from "../../assets/icons/coracaoOff.png";
 import descontoIcon from "../../assets/icons/desconto.png";
 
@@ -21,15 +22,21 @@ const ProductCard: React.FC<ProductCardProps> = ({
   precoPromocional,
   imagem,
 }) => {
+  // Lógica para calcular o valor da parcela
+  const valorFinal = precoPromocional || preco;
+  const valorParcela = valorFinal / 6;
+
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <img src={imagem} alt={nome} className={styles.image} />
         <div className={styles.heartIcon}>
+          {/* Use a variável importada aqui */}
           <img src={coracaoIcon} alt="Coração" />
         </div>
         {precoPromocional && (
           <div className={styles.discountIcon}>
+            {/* Use a variável importada aqui */}
             <img src={descontoIcon} alt="Desconto" />
           </div>
         )}
@@ -46,6 +53,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         ) : (
           <p className={styles.price}>R$ {preco.toFixed(2)}</p>
         )}
+        <p className={styles.installments}>6x de R$ {valorParcela.toFixed(2)}</p>
       </div>
     </div>
   );
