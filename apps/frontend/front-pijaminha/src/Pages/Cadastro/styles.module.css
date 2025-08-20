@@ -1,6 +1,6 @@
 .main {
     background-image: url('../../assets/backgorund/fundovermelho.png');
-    background-size: 120%;
+    background-size: 130%;
     background-color: var(--branco);
     background-position: center;
     display: flex;
@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0;
+    padding: 50px 0 70px;
     box-sizing: border-box;
     border-radius: 5px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
@@ -57,8 +57,7 @@
     margin-bottom: 40px; 
 }
 
-.form input::placeholder,
-.form textarea::placeholder {
+.form input::placeholder{
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 20px;
@@ -66,13 +65,14 @@
 
 .botaoRegistrar {
     height: 44px;
-    width: 157px;
+    min-width: 157px;
     background-color: var(--vermelho300);
     color: var(--branco);
     font-family: 'Montserrat';
     font-weight: 500;
     font-size: 24px;
     border: none;
+    margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
     cursor: pointer;
@@ -82,8 +82,7 @@
 .error {
     color: var(--branco);
     font-size: 14px;
-    align-self: flex-start;
-    width: 100%;
-    padding-left: 20px;
-    box-sizing: border-box;
+    margin-top: 2px;
+    font-family: 'Nunito Sans';
+    border: 2px black;
 }

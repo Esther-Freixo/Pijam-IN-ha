@@ -64,7 +64,7 @@ export default function Cadastro() {
                         
                         <input 
                             type="text" 
-                            placeholder='Nome de usuário'
+                            placeholder='Nome de Usuário'
                             {...register('usuario')}
                         />
                         {errors.usuario && <span className={styles.error}>{errors.usuario.message}</span>}
@@ -101,7 +101,7 @@ export default function Cadastro() {
                         disabled={isSubmitting} 
                         className={styles.botaoRegistrar}
                     >
-                        {isSubmitting ? 'Carregando...' : 'Registrar'}
+                        {isSubmitting ? 'Carregando...' : 'REGISTRAR'}
                     </button>
                 </form>
             </div>
