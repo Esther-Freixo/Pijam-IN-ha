@@ -1,7 +1,7 @@
 import { PajamasRepository, PajamaWithSizes } from '../pajamas-repository.ts'
-import { Prisma, Pajama, SizeType } from '@prisma/client'
+import { Prisma, Pajama, SizeType } from '@prisma/client';
 import { prisma } from '../../lib/prisma.ts'
-import { ResourceNotFoundError } from '../../errors/resource-not-find-error.ts'
+import { ResourceNotFoundError } from '../../errors/resource-not-found-error.ts'
 
 export class PrismaPajamasRepository implements PajamasRepository {
   

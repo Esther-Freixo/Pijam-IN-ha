@@ -7,7 +7,7 @@ CREATE TABLE "Feedback" (
 );
 
 -- CreateTable
-CREATE TABLE "Pajama" (
+CREATE TABLE "pajamas" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
@@ -22,12 +22,12 @@ CREATE TABLE "Pajama" (
 );
 
 -- CreateTable
-CREATE TABLE "PajamaSize" (
+CREATE TABLE "pajamasSize" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "stock_quantity" INTEGER NOT NULL,
     "size" TEXT NOT NULL,
     "pajamaId" TEXT NOT NULL,
-    CONSTRAINT "PajamaSize_pajamaId_fkey" FOREIGN KEY ("pajamaId") REFERENCES "Pajama" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT "pajamasSize_pajamaId_fkey" FOREIGN KEY ("pajamaId") REFERENCES "pajamas" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- CreateTable
@@ -51,7 +51,7 @@ CREATE TABLE "Sale_pajamas" (
     "saleId" TEXT NOT NULL,
     "pajamaId" TEXT NOT NULL,
     CONSTRAINT "Sale_pajamas_saleId_fkey" FOREIGN KEY ("saleId") REFERENCES "Sale" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT "Sale_pajamas_pajamaId_fkey" FOREIGN KEY ("pajamaId") REFERENCES "Pajama" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT "Sale_pajamas_pajamaId_fkey" FOREIGN KEY ("pajamaId") REFERENCES "pajamas" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateTable
