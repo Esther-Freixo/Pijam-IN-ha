@@ -1,0 +1,9 @@
+.corpo{
+     background-image: url('../../assets/backgorund/fundoazulhorizontal.png');
+     width: 100%;
+     background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}

@@ -45,36 +45,43 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       </div>
 
       <div className={styles.filters}>
-        <select value={genero} onChange={(e) => setGenero(e.target.value)}>
-          <option value="" disabled>
-            {getPlaceholder(genero, "Gênero")}
-          </option>
-          <option value="">Todos</option>
-          <option value="feminino">Feminino</option>
-          <option value="masculino">Masculino</option>
-          <option value="unissex">Unissex</option>
-          <option value="família">Família</option>
-        </select>
+        {/* Adicionado um wrapper para cada select */}
+        <div className={styles.selectWrapper}>
+          <select value={genero} onChange={(e) => setGenero(e.target.value)}>
+            <option value="" disabled>
+              {getPlaceholder(genero, "Gênero")}
+            </option>
+            <option value="">Todos</option>
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+            <option value="unissex">Unissex</option>
+            <option value="família">Família</option>
+          </select>
+        </div>
 
-        <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
-          <option value="" disabled>
-            {getPlaceholder(tipo, "Tipo")}
-          </option>
-          <option value="">Todos</option>
-          <option value="adulto">Adulto</option>
-          <option value="infantil">Infantil</option>
-        </select>
+        <div className={styles.selectWrapper}>
+          <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
+            <option value="" disabled>
+              {getPlaceholder(tipo, "Tipo")}
+            </option>
+            <option value="">Todos</option>
+            <option value="adulto">Adulto</option>
+            <option value="infantil">Infantil</option>
+          </select>
+        </div>
 
-        <select value={estacao} onChange={(e) => setEstacao(e.target.value)}>
-          <option value="" disabled>
-            {getPlaceholder(estacao, "Estação")}
-          </option>
-          <option value="">Todos</option>
-          <option value="verao">Verão</option>
-          <option value="inverno">Inverno</option>
-          <option value="primavera">Primavera</option>
-          <option value="outono">Outono</option>
-        </select>
+        <div className={styles.selectWrapper}>
+          <select value={estacao} onChange={(e) => setEstacao(e.target.value)}>
+            <option value="" disabled>
+              {getPlaceholder(estacao, "Estação")}
+            </option>
+            <option value="">Todos</option>
+            <option value="verao">Verão</option>
+            <option value="inverno">Inverno</option>
+            <option value="primavera">Primavera</option>
+            <option value="outono">Outono</option>
+          </select>
+        </div>
       </div>
     </div>
   );

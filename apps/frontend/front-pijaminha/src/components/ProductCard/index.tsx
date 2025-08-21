@@ -39,12 +39,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className={styles.imageContainer}>
         <img src={imagem} alt={nome} className={styles.image} />
         <div className={styles.heartIcon}>
-          {/* Use a variável importada aqui */}
+          {}
           <img src={coracaoIcon} alt="Coração" />
         </div>
         {precoPromocional && (
           <div className={styles.discountIcon}>
-            {/* Use a variável importada aqui */}
+            {}
             <img src={descontoIcon} alt="Desconto" />
           </div>
         )}

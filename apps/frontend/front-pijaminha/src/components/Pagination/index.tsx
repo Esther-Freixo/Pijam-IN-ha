@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
+import setaDireita from "../../assets/buttons/btnSetaDireita.png";
+import setaEsquerda from "../../assets/buttons/btnSetaEsquerda.png";
 
 interface PaginationProps {
   paginaAtual: number;
@@ -15,8 +17,6 @@ const Pagination: React.FC<PaginationProps> = ({
   const handleClick = (pagina: number) => {
     if (pagina >= 1 && pagina <= totalPaginas) {
       onMudarPagina(pagina);
-
-      // Faz a página rolar suavemente até o topo
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
@@ -31,12 +31,11 @@ const Pagination: React.FC<PaginationProps> = ({
 
   const renderizarNumeros = () => {
     const elementos = [];
-    const blocoTamanho = 4; // sempre 4 números visíveis
-    const blocoIndex = Math.floor((paginaAtual - 1) / blocoTamanho); // em qual bloco estou
+    const blocoTamanho = 4;
+    const blocoIndex = Math.floor((paginaAtual - 1) / blocoTamanho);
     const inicio = blocoIndex * blocoTamanho + 1;
     const fim = Math.min(totalPaginas, inicio + blocoTamanho - 1);
 
-    // Primeiro par
     for (let i = inicio; i <= Math.min(totalPaginas, inicio + 1); i++) {
       elementos.push(
         <button
@@ -49,7 +48,6 @@ const Pagination: React.FC<PaginationProps> = ({
       );
     }
 
-    // "..." no meio (se couber o próximo par dentro do bloco)
     if (inicio + 2 <= fim) {
       elementos.push(
         <span key="dots" className={styles.dots}>
@@ -58,7 +56,6 @@ const Pagination: React.FC<PaginationProps> = ({
       );
     }
 
-    // Segundo par
     for (let i = inicio + 2; i <= fim; i++) {
       elementos.push(
         <button
@@ -81,7 +78,7 @@ const Pagination: React.FC<PaginationProps> = ({
         disabled={paginaAtual === 1}
         className={styles.arrowButton}
       >
-        &lt;
+        <img src={setaEsquerda} alt="Anterior" />
       </button>
       {renderizarNumeros()}
       <button
@@ -89,7 +86,7 @@ const Pagination: React.FC<PaginationProps> = ({
         disabled={paginaAtual === totalPaginas}
         className={styles.arrowButton}
       >
-        &gt;
+        <img src={setaDireita} alt="Próxima" />
       </button>
     </div>
   );

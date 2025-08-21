@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   gap: 36px; /* Aumentei o espaçamento para combinar com a imagem */
-  margin: 2rem 0;
+  padding: 90px 0 131px 0;
   font-family: sans-serif;
 }
 
@@ -15,7 +15,8 @@
   padding: 0;
   width: auto;
   height: auto;
-  font-size: 1.25rem; /* Aumentei o tamanho da fonte */
+  font-size: 32px; /* Aumentei o tamanho da fonte */
+  font-weight: 400;
   color: #274553;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -23,16 +24,16 @@
 
 /* Estilo para os botões de números ativos */
 .active {
-  background-color: #9fc2d2; /* Cor de fundo do número ativo (o azul claro da imagem) */
+  background-color: #72A8C1; /* Cor de fundo do número ativo (o azul claro da imagem) */
   color: #fff;
   border-radius: 50%;
-  width: 40px; /* Aumentei o tamanho para o círculo ser mais visível */
-  height: 40px;
+  width: 68px; /* Aumentei o tamanho para o círculo ser mais visível */
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 1.25rem; /* Aumentei o tamanho da fonte */
+  font-weight: 400;
+  font-size: 32px; /* Aumentei o tamanho da fonte */
   border: none; /* Removido a borda */
 }
 
@@ -51,6 +52,11 @@
   justify-content: center;
 }
 
+.arrowButton img {
+  width: 20.37px;
+  height: 35.47px;
+}
+
 .pageButton:disabled,
 .arrowButton:disabled {
   color: #ccc;
@@ -60,6 +66,6 @@
 /* Estilo para os três pontinhos */
 .dots {
   color: #274553;
-  font-size: 1.5rem; /* Aumentei o tamanho */
+  font-size: 32px; /* Aumentei o tamanho */
   margin: 0 4px;
 }

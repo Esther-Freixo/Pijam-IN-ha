@@ -5,6 +5,7 @@ import SearchBar from "../../components/Pesquisa";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import styles from "./styles.module.css";
 
 interface Filtros {
   nome: string;
@@ -64,7 +65,7 @@ export default function Lista_Pijamas() {
   };
 
   return (
-    <div>
+    <div className={styles.corpo}>
       <SearchBar onSearch={handleSearch} />
       <ProductList produtos={produtosDaPagina} />
       <Pagination

@@ -61,19 +61,67 @@
   gap: 47px;
 }
 
-.filters select {
-  background-color: #9fc2d2;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-  font-size: 0.95rem;
+
+.selectWrapper {
+  position: relative;
   width: 312px;
   height: 53px;
+}
+
+.selectWrapper select {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem 0.5rem 20px;   
+  background-color: #9fc2d2;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 25px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 500;
+  color: #274553;
   cursor: pointer;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.filters select:hover {
+.selectWrapper select option {
+font-size: 25px; 
+font-family: 'Nunito Sans', sans-serif;
+font-weight: 500;
+color: #274553;
+}
+
+.selectWrapper select:hover {
   background-color: #8ab2c4;
+}
+
+.selectWrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%; 
+  background-color: #4e8098;
+  border-radius: 0.3rem 0 0 0.3rem; 
+  z-index: 1;
+}
+
+.selectWrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px; 
+  transform: translateY(-50%);
+  background-image: url('../../assets/buttons/btnSetaFiltroBaixo.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 41px; 
+  height: 41px;
+  pointer-events: none; 
+  z-index: 2;
 }
