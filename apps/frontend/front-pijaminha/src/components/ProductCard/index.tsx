@@ -1,23 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
-import coracaoIcon from "../../assets/icons/coracaoOff.png";
+import favoriteIcon from "../../assets/icons/coracaoOff.png";
+import favoritedIcon from "../../assets/icons/coracaoOn.png";
 import descontoIcon from "../../assets/icons/desconto.png";
 import type { Pijama } from "../../Types/Pijama";
 
 interface ProductCardProps {
   pijama: Pijama;
 }
+
 const ProductCard: React.FC<ProductCardProps> = ({ pijama }) => {
   const navigate = useNavigate();
-  const { id, name, image, price, on_sale, sale_percent } = pijama;
+  const { id, name, image, price, on_sale, sale_percent, favorite } = pijama;
 
   const priceOnSale = price * (1 - (sale_percent ?? 0));
   const valorFinal = priceOnSale || price;
   const valorParcela = valorFinal / 6;
 
+  // Estado local para favorito
+  const [isFavorited, setIsFavorited] = useState<boolean>(favorite ?? false);
+
+  // Navegação para página do produto
   const handleClick = () => {
     navigate(`/pijama/${id}`);
+  };
+
+  // Alterna favorito sem navegar
+  const handleFavoriteClick = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Impede navegação ao clicar no coração
+    setIsFavorited((prev) => !prev);
+    // Aqui você pode atualizar o contexto ou persistir no backend/localStorage se quiser
   };
 
   return (
@@ -29,7 +42,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ pijama }) => {
       <div className={styles.imageContainer}>
         <img src={image} alt={name} className={styles.image} />
         <div className={styles.heartIcon}>
-          <img src={coracaoIcon} alt="Coração" />
+          <img
+            src={isFavorited ? favoritedIcon : favoriteIcon}
+            alt="Coração"
+            onClick={handleFavoriteClick}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         {on_sale && (
           <div className={styles.discountIcon}>

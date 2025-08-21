@@ -1,8 +1,8 @@
 import { SalesRepository } from '../../repositories/sales-repository.ts'
 import { Prisma, SizeType } from '@prisma/client'
 import { prisma } from '../../lib/prisma.ts'
-import { ResourceNotFoundError } from '../../errors/resource-not-find-error.ts'
 import { OutOfStockError } from '../../errors/out-of-stock-error.ts'
+import { ResourceNotFoundError } from '../../errors/resource-not-found-error.ts'
 
 interface SaleItemInput {
   pajamaId: string

@@ -2,8 +2,8 @@ import { FastifyRequest, FastifyReply } from 'fastify'
 import { z } from 'zod'
 import { PrismaSalesRepository } from '../../../repositories/prisma/prisma-sales-repository.ts'
 import { CreateSaleUseCase } from '../../../use-cases/sales/create-sale-use-case.ts'
-import { ResourceNotFoundError } from '../../../errors/resource-not-find-error.ts'
 import { OutOfStockError } from '../../../errors/out-of-stock-error.ts'
+import { ResourceNotFoundError } from '../../../errors/resource-not-found-error.ts'
 
 export async function create(request: FastifyRequest, reply: FastifyReply) {
   const createSaleBodySchema = z.object({

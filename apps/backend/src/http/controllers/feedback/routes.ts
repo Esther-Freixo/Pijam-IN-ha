@@ -5,10 +5,8 @@ import { getAllFeedbacks } from "./getAll.ts";
 
 
 
-export function userRoutes(app: FastifyInstance) {
+export function feedbackRoutes(app: FastifyInstance) {
     app.post('/feedbacks', register)
-    app.delete('feeedbacks/:feedbackId', deleteFeedback)
-    app.get('feedbacks', getAllFeedbacks)
-
-
+    app.delete('/feeedbacks/:feedbackId', deleteFeedback)
+    app.get('/feedbacks', getAllFeedbacks)
 }

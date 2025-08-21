@@ -16,6 +16,8 @@
     "@fastify/cookie": "11.0.2",
     "@fastify/cors": "11.1.0",
     "@fastify/jwt": "9.1.0",
+    "@fastify/swagger": "9.5.1",
+    "@fastify/swagger-ui": "5.2.3",
     "@prisma/client": "6.13.0",
     "bcrypt": "6.0.0",
     "bcryptjs": "3.0.2",
