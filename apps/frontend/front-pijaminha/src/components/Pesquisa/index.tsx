@@ -11,6 +11,10 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  // Função para definir o label do placeholder
+  const getPlaceholder = (value: string, label: string) => {
+    return value === "" ? label : "Todos";
+  };
   const [nome, setNome] = useState("");
   const [genero, setGenero] = useState("");
   const [tipo, setTipo] = useState("");
@@ -29,6 +33,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           value={nome}
           onChange={(e) => setNome(e.target.value)}
           className={styles.input}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSearch();
+            }
+          }}
         />
         <button onClick={handleSearch} className={styles.searchBtn}>
           <img src="/src/assets/icons/pesquisa.png" alt="" />
@@ -36,7 +45,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       </div>
 
       <div className={styles.filters}>
-        <select value={genero} onChange={e => setGenero(e.target.value)}>
+        <select value={genero} onChange={(e) => setGenero(e.target.value)}>
+          <option value="" disabled>
+            {getPlaceholder(genero, "Gênero")}
+          </option>
           <option value="">Todos</option>
           <option value="feminino">Feminino</option>
           <option value="masculino">Masculino</option>
@@ -44,13 +56,19 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           <option value="família">Família</option>
         </select>
 
-        <select value={tipo} onChange={e => setTipo(e.target.value)}>
+        <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
+          <option value="" disabled>
+            {getPlaceholder(tipo, "Tipo")}
+          </option>
           <option value="">Todos</option>
           <option value="adulto">Adulto</option>
           <option value="infantil">Infantil</option>
         </select>
 
-        <select value={estacao} onChange={e => setEstacao(e.target.value)}>
+        <select value={estacao} onChange={(e) => setEstacao(e.target.value)}>
+          <option value="" disabled>
+            {getPlaceholder(estacao, "Estação")}
+          </option>
           <option value="">Todos</option>
           <option value="verao">Verão</option>
           <option value="inverno">Inverno</option>

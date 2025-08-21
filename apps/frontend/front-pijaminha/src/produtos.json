@@ -7,7 +7,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 2,
@@ -16,7 +23,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "outono"
+    "estacao": "outono",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 3,
@@ -26,7 +40,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "infantil",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 4,
@@ -35,7 +56,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 5,
@@ -45,7 +73,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 6,
@@ -54,7 +89,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 7,
@@ -64,7 +106,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 8,
@@ -73,7 +122,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 9,
@@ -83,7 +139,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 10,
@@ -92,7 +155,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 11,
@@ -102,7 +172,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "unissex",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 12,
@@ -111,7 +188,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "infantil",
     "tipo": "infantil",
-    "estacao": "outono"
+    "estacao": "outono",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 13,
@@ -121,7 +205,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 14,
@@ -130,7 +221,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 15,
@@ -140,7 +238,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "unissex",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 16,
@@ -149,7 +254,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 17,
@@ -159,7 +271,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 18,
@@ -168,7 +287,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 19,
@@ -178,7 +304,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "unissex",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 20,
@@ -187,7 +320,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 21,
@@ -197,7 +337,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 22,
@@ -207,7 +354,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 23,
@@ -216,7 +370,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "infantil",
-    "estacao": "outono"
+    "estacao": "outono",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 24,
@@ -226,7 +387,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "infantil",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 25,
@@ -235,7 +403,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "unissex",
     "tipo": "infantil",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 26,
@@ -245,7 +420,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 27,
@@ -254,7 +436,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 28,
@@ -264,7 +453,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 29,
@@ -273,7 +469,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 30,
@@ -283,7 +486,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 31,
@@ -292,7 +502,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 32,
@@ -302,7 +519,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "unissex",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 33,
@@ -311,7 +535,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "infantil",
     "tipo": "infantil",
-    "estacao": "outono"
+    "estacao": "outono",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 34,
@@ -321,7 +552,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 35,
@@ -330,7 +568,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 36,
@@ -340,7 +585,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "unissex",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 37,
@@ -349,7 +601,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 38,
@@ -359,7 +618,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 39,
@@ -368,7 +634,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 40,
@@ -378,7 +651,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "unissex",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 41,
@@ -387,7 +667,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 42,
@@ -397,7 +684,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 43,
@@ -407,7 +701,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "unissex",
     "tipo": "adulto",
-    "estacao": "inverno"
+    "estacao": "inverno",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 44,
@@ -416,7 +717,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "infantil",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 45,
@@ -426,7 +734,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "masculino",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 46,
@@ -435,7 +750,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 47,
@@ -445,7 +767,14 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "unissex",
     "tipo": "infantil",
-    "estacao": "verao"
+    "estacao": "verao",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   },
   {
     "id": 48,
@@ -454,6 +783,13 @@
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
     "tipo": "adulto",
-    "estacao": "primavera"
+    "estacao": "primavera",
+    "size": [
+      { "size": "PP", "stock_quantity": 3 },
+      { "size": "P", "stock_quantity": 10 },
+      { "size": "M", "stock_quantity": 15 },
+      { "size": "G", "stock_quantity": 8 },
+      { "size": "GG", "stock_quantity": 5 }
+    ]
   }
 ]
