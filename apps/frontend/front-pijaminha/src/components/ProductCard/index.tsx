@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./styles.module.css";
-// IMPORTANTE: Importe os ícones aqui primeiro
 import coracaoIcon from "../../assets/icons/coracaoOff.png";
 import descontoIcon from "../../assets/icons/desconto.png";
 

@@ -15,6 +15,9 @@ const Pagination: React.FC<PaginationProps> = ({
   const handleClick = (pagina: number) => {
     if (pagina >= 1 && pagina <= totalPaginas) {
       onMudarPagina(pagina);
+
+      // Faz a página rolar suavemente até o topo
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -28,26 +31,13 @@ const Pagination: React.FC<PaginationProps> = ({
 
   const renderizarNumeros = () => {
     const elementos = [];
-    const maxNumeros = 5;
-    const inicio = Math.max(1, paginaAtual - Math.floor(maxNumeros / 2));
-    const fim = Math.min(totalPaginas, inicio + maxNumeros - 1);
+    const blocoTamanho = 4; // sempre 4 números visíveis
+    const blocoIndex = Math.floor((paginaAtual - 1) / blocoTamanho); // em qual bloco estou
+    const inicio = blocoIndex * blocoTamanho + 1;
+    const fim = Math.min(totalPaginas, inicio + blocoTamanho - 1);
 
-    if (inicio > 1) {
-      elementos.push(
-        <button
-          key={1}
-          onClick={() => handleClick(1)}
-          className={paginaAtual === 1 ? styles.active : styles.pageButton}
-        >
-          1
-        </button>
-      );
-      if (inicio > 2) {
-        elementos.push(<span key="dots-start" className={styles.dots}>...</span>);
-      }
-    }
-
-    for (let i = inicio; i <= fim; i++) {
+    // Primeiro par
+    for (let i = inicio; i <= Math.min(totalPaginas, inicio + 1); i++) {
       elementos.push(
         <button
           key={i}
@@ -59,19 +49,24 @@ const Pagination: React.FC<PaginationProps> = ({
       );
     }
 
-    if (fim < totalPaginas) {
-      if (fim < totalPaginas - 1) {
-        elementos.push(<span key="dots-end" className={styles.dots}>...</span>);
-      }
+    // "..." no meio (se couber o próximo par dentro do bloco)
+    if (inicio + 2 <= fim) {
+      elementos.push(
+        <span key="dots" className={styles.dots}>
+          ...
+        </span>
+      );
+    }
+
+    // Segundo par
+    for (let i = inicio + 2; i <= fim; i++) {
       elementos.push(
         <button
-          key={totalPaginas}
-          onClick={() => handleClick(totalPaginas)}
-          className={
-            paginaAtual === totalPaginas ? styles.active : styles.pageButton
-          }
+          key={i}
+          onClick={() => handleClick(i)}
+          className={paginaAtual === i ? styles.active : styles.pageButton}
         >
-          {totalPaginas}
+          {i}
         </button>
       );
     }

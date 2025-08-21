@@ -12,7 +12,6 @@ interface Filtros {
   estacao: string;
 }
 
-
 export default function Lista_Pijamas() {
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [filtrosDeBusca, setFiltrosDeBusca] = useState<Filtros>({
@@ -25,9 +24,9 @@ export default function Lista_Pijamas() {
   const produtosFiltrados = produtosData.filter(produto => {
     return (
       produto.nome.toLowerCase().includes(filtrosDeBusca.nome.toLowerCase()) &&
-      (filtrosDeBusca.genero === '' || produto.genero === filtrosDeBusca.genero) &&
-      (filtrosDeBusca.tipo === '' || produto.tipo === filtrosDeBusca.tipo) &&
-      (filtrosDeBusca.estacao === '' || produto.estacao === filtrosDeBusca.estacao)
+      (filtrosDeBusca.genero === '' || produto.genero.toLowerCase() === filtrosDeBusca.genero.toLowerCase()) &&
+      (filtrosDeBusca.tipo === '' || produto.tipo.toLowerCase() === filtrosDeBusca.tipo.toLowerCase()) &&
+      (filtrosDeBusca.estacao === '' || produto.estacao.toLowerCase() === filtrosDeBusca.estacao.toLowerCase())
     );
   });
 

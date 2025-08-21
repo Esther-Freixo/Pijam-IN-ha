@@ -2,7 +2,7 @@
   {
     "id": 1,
     "nome": "Pijama Feminino Bolinhas",
-    "preco": 99.9,
+    "preco": 66.6,
     "precoPromocional": 67.06,
     "imagem": "src/assets/pijama/pijama.png",
     "genero": "feminino",
@@ -12,28 +12,28 @@
   {
     "id": 2,
     "nome": "Pijama Masculino Listrado",
-    "preco": 129.9,
+    "preco": 66.6,
     "imagem": "src/assets/pijama/pijama.png",
-    "genero": "masculino",
-    "tipo": "infantil",
+    "genero": "feminino",
+    "tipo": "adulto",
     "estacao": "outono"
   },
   {
     "id": 3,
     "nome": "Pijama Infantil Estrela",
     "preco": 78.9,
-    "precoPromocional": 59.9,
+    "precoPromocional": 66.6,
     "imagem": "src/assets/pijama/pijama.png",
-    "genero": "infantil",
-    "tipo": "adulto",
+    "genero": "masculino",
+    "tipo": "infantil",
     "estacao": "inverno"
   },
   {
     "id": 4,
     "nome": "Pijama Unissex de Cetim",
-    "preco": 159.9,
+    "preco": 66.6,
     "imagem": "src/assets/pijama/pijama.png",
-    "genero": "unissex",
+    "genero": "feminino",
     "tipo": "infantil",
     "estacao": "primavera"
   },
@@ -195,7 +195,7 @@
     "preco": 69.9,
     "precoPromocional": 54.9,
     "imagem": "src/assets/pijama/pijama.png",
-     "genero": "feminino",
+    "genero": "feminino",
     "tipo": "infantil",
     "estacao": "verao"
   },
