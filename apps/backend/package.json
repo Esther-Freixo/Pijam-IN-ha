@@ -9,6 +9,10 @@
     "start": "node build/server.ts",
     "build": "tsup src --out-dir build"
   },
+  "prisma": {
+    "seed": 
+      "tsx prisma/seed.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -2,5 +2,13 @@
   "dependencies": {
     "react-slick": "^0.31.0",
     "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run backend:setup\" \"npm run frontend:setup\"",  
+    "backend:setup": "cd apps/backend && npm install && npx prisma migrate reset --force && npm run dev",
+    "frontend:setup": "cd apps/frontend/front-pijaminha && npm install && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
   }
 }
