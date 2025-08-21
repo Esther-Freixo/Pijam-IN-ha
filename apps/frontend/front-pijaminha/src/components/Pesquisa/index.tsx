@@ -12,9 +12,9 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [nome, setNome] = useState("");
-  const [genero, setGenero] = useState("Todos");
-  const [tipo, setTipo] = useState("Todos");
-  const [estacao, setEstacao] = useState("Todos");
+  const [genero, setGenero] = useState("");
+  const [tipo, setTipo] = useState("");
+  const [estacao, setEstacao] = useState("");
 
   const handleSearch = () => {
     onSearch({ nome, genero, tipo, estacao });
@@ -31,29 +31,31 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           className={styles.input}
         />
         <button onClick={handleSearch} className={styles.searchBtn}>
-          🔍
+          <img src="/src/assets/icons/pesquisa.png" alt="" />
         </button>
       </div>
 
       <div className={styles.filters}>
-        <select value={genero} onChange={(e) => setGenero(e.target.value)}>
-          <option>Gênero</option>
-          <option>Unissex</option>
-          <option>Masculino</option>
-          <option>Feminino</option>
-          <option>Família</option>
+        <select value={genero} onChange={e => setGenero(e.target.value)}>
+          <option value="">Todos</option>
+          <option value="feminino">Feminino</option>
+          <option value="masculino">Masculino</option>
+          <option value="unissex">Unissex</option>
+          <option value="família">Família</option>
         </select>
 
-        <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
-          <option>Tipo</option>
-          <option>Adulto</option>
-          <option>Infantil</option>
+        <select value={tipo} onChange={e => setTipo(e.target.value)}>
+          <option value="">Todos</option>
+          <option value="adulto">Adulto</option>
+          <option value="infantil">Infantil</option>
         </select>
 
-        <select value={estacao} onChange={(e) => setEstacao(e.target.value)}>
-          <option>Estação</option>
-          <option>Inverno</option>
-          <option>Verão</option>
+        <select value={estacao} onChange={e => setEstacao(e.target.value)}>
+          <option value="">Todos</option>
+          <option value="verao">Verão</option>
+          <option value="inverno">Inverno</option>
+          <option value="primavera">Primavera</option>
+          <option value="outono">Outono</option>
         </select>
       </div>
     </div>
