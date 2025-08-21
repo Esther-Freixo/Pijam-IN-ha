@@ -1,101 +1,101 @@
 .container {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .titulo {
-    font-family: 'Numans';
-    font-size: 48px;
-    font-weight: 400;
-    color: var(--vermelho400);
-    margin-left: 70px;
-    margin-bottom: 40px;
+  font-family: "Numans";
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--vermelho400);
+  margin-left: 70px;
+  margin-bottom: 40px;
 }
 
 .conteudoPrincipal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  box-sizing: border-box;
 }
 
 .cardsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-left: 0;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-left: 0;
+  justify-items: center;
 }
 
 .cards {
-    width: 100%;
-    max-width: 390px;
-    min-height: 400px;
-    background-color: var(--branco);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 30px;
-    box-sizing: border-box;
-    box-shadow: 6px 7px 15px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 390px;
+  min-height: 400px;
+  background-color: var(--branco);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 6px 7px 15px rgba(0, 0, 0, 0.35);
 }
 
 .cardContent {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .nome {
-    width: 360px;
-    font-family: 'Numans';
-    font-size: 40px;
-    font-weight: 400;
-    color: var(--preto);
-    margin-bottom: 30px;
+  width: 360px;
+  font-family: "Numans";
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--preto);
+  margin-bottom: 30px;
 }
 
 .estrelas {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 50px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 50px;
 }
 
 .estrelas img {
-    width: 55px;
-    height: 55px;
+  width: 55px;
+  height: 55px;
 }
 
 .descricao {
-    width: 100%;
-    font-family: 'Nunito Sans';
-    font-weight: 400;
-    color: var(--preto);
-    font-style: italic;
-    font-size: 16.03px;
-    line-height: 1.5;
-    text-align: justify;
+  width: 100%;
+  font-family: "Nunito Sans";
+  font-weight: 400;
+  color: var(--preto);
+  font-style: italic;
+  font-size: 16.03px;
+  line-height: 1.5;
+  text-align: justify;
 }
 
 .botao {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    width: 20px;
-    height: 35px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 35px;
 }
 
 .seta {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
