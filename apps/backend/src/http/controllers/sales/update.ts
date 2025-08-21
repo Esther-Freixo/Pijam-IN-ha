@@ -2,7 +2,7 @@ import { FastifyRequest, FastifyReply } from 'fastify'
 import { z } from 'zod'
 import { PrismaSalesRepository } from '../../../repositories/prisma/prisma-sales-repository.ts'
 import { UpdateSaleUseCase } from '../../../use-cases/sales/update-sale-use-case.ts'
-import { ResourceNotFoundError } from '../../../errors/resource-not-find-error.ts'
+import { ResourceNotFoundError } from '../../../errors/resource-not-found-error.ts'
 
 export async function update(request: FastifyRequest, reply: FastifyReply) {
   const updateSaleParamsSchema = z.object({

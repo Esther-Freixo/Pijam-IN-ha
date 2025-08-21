@@ -1,6 +1,6 @@
+import { ResourceNotFoundError } from '../../errors/resource-not-found-error.ts'
 import { SalesRepository } from '../../repositories/sales-repository.ts'
 import { Prisma } from '@prisma/client'
-import { ResourceNotFoundError } from '../../errors/resource-not-find-error.ts'
 
 interface UpdateSaleRequest {
   saleId: string

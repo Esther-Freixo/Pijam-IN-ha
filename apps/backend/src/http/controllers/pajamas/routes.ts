@@ -6,10 +6,10 @@ import { list } from './list.ts'
 import { updateStock } from './update.ts'
 import { remove } from './delete.ts'
 
-export async function pajamasRoutes(app: FastifyInstance) {
-  app.get('/pajamas', list)
-  app.get('/pajamas/:pajamaId', getDetails)
-  app.post('/pajamas', { onRequest: [verifyJWT] }, create)
-  app.patch('/pajamas/:pajamaId/stock', { onRequest: [verifyJWT] }, updateStock)
-  app.delete('/pajamas/:pajamaId', { onRequest: [verifyJWT] }, remove)
+export async function pijamaRoutes(app: FastifyInstance) {
+  app.get('/pijama', list)
+  app.get('/pijama/:pijamaId', getDetails)
+  app.post('/pijama', { onRequest: [verifyJWT] }, create)
+  app.patch('/pijama/:pijamaId/stock', { onRequest: [verifyJWT] }, updateStock)
+  app.delete('/pijama/:pijamaId', { onRequest: [verifyJWT] }, remove)
 }
