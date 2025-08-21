@@ -5,6 +5,7 @@ import banner2 from "../../assets/banners/bannerValentines.png";
 import banner3 from "../../assets/banners/bannerGrupo.png";
 import logo1 from "../../assets/logo/logoazul.png";
 import Carrossel from "../../components/CarrosselComp";
+import CaixaFeedback from "../../components/CaixaFeedback";
 import pessoas from "../../assets/icons/people.png";
 import caminhao from "../../assets/icons/caminhaodelivery.png";
 import pijama from "../../assets/icons/pijamafeminino.png";
@@ -69,11 +70,10 @@ export default function Home() {
         <div className={styles.promocoes}>
           <ProductList produtos={promocoesDestaque} />
         </div>
-
-        <div className={styles.tituloFeedback}>
-          <h1 className={styles.tituloSecao}>Feedbacks</h1>
-        </div>
-
+         
+        <div>
+           <CaixaFeedback/>
+        </div> 
         <div className={styles.feedbackSecao}>
           <Link className={styles.botao} to="/feedback">
             Também quero dar um feedback!
