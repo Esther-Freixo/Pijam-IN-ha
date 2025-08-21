@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { usePijamas } from "../hooks/usePijamas";
-import { PijamasContext } from "./context";
+import { PijamasContext } from "./pijamasContext";
 
 export function PijamasProvider({ children }: { children: ReactNode }) {
   const { pijamas } = usePijamas();
