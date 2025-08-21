@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "feedback", element: <Feedback /> },
       { path: "cadastro", element: <Cadastro /> },
-      { path: "pijama", element: <Pijama /> },
+  { path: "pijama/:id", element: <Pijama /> },
       { path: "lista_pijamas", element: <Lista_Pijamas /> },
     ],
   },

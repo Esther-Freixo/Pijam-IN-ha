@@ -10,7 +10,12 @@ export default function Header() {
   return (
     <header className={style.header}>
       <div className={style.logoContainer}>
-        <img src={logo} alt="Logo da loja Pijaminha" />
+        <img
+          src={logo}
+          alt="Logo da loja Pijaminha"
+          onClick={() => navigate("/")}
+          style={{ cursor: "pointer" }}
+        />
       </div>
 
       <div className={style.links}>
@@ -21,10 +26,9 @@ export default function Header() {
         <p onClick={() => navigate("/lista_pijamas?genero=masculino")}>
           MASCULINO
         </p>
-        <p onClick={() => navigate("/lista_pijamas?genero=infantil")}>
-          INFANTIL
-        </p>
+        <p onClick={() => navigate("/lista_pijamas?tipo=infantil")}>INFANTIL</p>
       </div>
+
       <div className={style.icons}>
         <div className={style.productsIcons}>
           <img src={cart} alt="Icone de carrinho" />
@@ -35,7 +39,12 @@ export default function Header() {
           />
         </div>
         <div className={style.userIcon}>
-          <img src={user} alt="Icone do usuario" />
+          <img
+            src={user}
+            alt="Icone do usuario"
+            onClick={() => navigate("/login")}
+            style={{ cursor: "pointer" }}
+          />
         </div>
       </div>
     </header>
