@@ -1,27 +1,21 @@
 import React from "react";
 import ProductCard from "../ProductCard";
 import styles from "./styles.module.css";
-
-interface Produto {
-  id: number;
-  nome: string;
-  preco: number;
-  precoPromocional?: number;
-  imagem: string;
-  genero: string;
-  tipo: string;
-  estacao: string;
-}
+import { usePijamasContext } from "../../hooks/usePijamasContext";
+import type { Pijama } from "../../Types/Pijama";
 
 interface ProductListProps {
-  produtos: Produto[];
+  produtos?: Pijama[];
 }
 
 const ProductList: React.FC<ProductListProps> = ({ produtos }) => {
+  const { pijamas } = usePijamasContext();
+  const listaPijamas = produtos ?? pijamas;
+
   return (
     <div className={styles.grid}>
-      {produtos.map((p) => (
-        <ProductCard key={p.id} {...p} />
+      {listaPijamas.map((p) => (
+        <ProductCard key={p.id} pijama={p} />
       ))}
     </div>
   );

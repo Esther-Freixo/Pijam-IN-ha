@@ -1,41 +1,54 @@
 import { useState } from "react";
 import Tamanho, { type Size } from "../../components/Tamanho";
 import Quantidade from "../../components/Quantidade";
-import pijamaImg from "../../assets/imgPijamaEstatico.jpg";
 import style from "./style.module.css";
 import favoriteIcon from "../../assets/icons/coracaoOff.png";
 import inverno from "../../assets/icons/inverno.png";
 import unissex from "../../assets/icons/unissex.png";
 import adulto from "../../assets/icons/adulto.png";
 import favoritedIcon from "../../assets/icons/coracaoOn.png";
+import { usePijamasContext } from "../../hooks/usePijamasContext";
+import { useParams } from "react-router-dom";
 
 export default function Pijama() {
+  const { pijamas } = usePijamasContext();
+  const { pijamaId } = useParams();
   const [selectedSize, setSelectedSize] = useState<Size | null>(null);
-  const [isFavorited, setIsFavorited] = useState<boolean>(false);
-  const onSale = false;
-  const price: number = 78.9;
-  const priceOnSale: number = price * 0.85;
-  const pricePix: number = (onSale ? priceOnSale : price) * 0.85;
+  const pijama = pijamas.find(
+    (pijama) => Number(pijama.id) === Number(pijamaId)
+  );
+  const [isFavorited, setIsFavorited] = useState<boolean>(
+    () => pijama?.favorite ?? false
+  );
+  if (!pijama) {
+    return <div>Pijama nao encontrado</div>;
+  }
+
+  const priceOnSale: number = pijama.price * (1 - (pijama.sale_percent ?? 0));
+  const pricePix: number = (pijama.on_sale ? priceOnSale : pijama.price) * 0.85;
+  const installmentPrice = (pijama.price / 6).toFixed(2);
   const sizes: Size[] = ["PP", "P", "M", "G", "GG"];
   return (
     <>
       <section className={style.section}>
         <div className={style.pajamaImgContainer}>
-          <img src={pijamaImg} alt="" />
+          <img src={pijama.image} alt="" />
         </div>
         <div className={style.pajamaData}>
           <div className={style.pajamaTitle}>
-            <h2>PIJAMA FEMININO LONGO - ESTAMPA POÁ</h2>
-            <span>Ref: #123456</span>
+            <h2>{pijama.name}</h2>
+            <span>#{pijama.id}</span>
           </div>
           <div className={style.prices}>
             <div className={style.pricesLeftSide}>
-              {onSale && (
-                <span>R$ {price.toFixed(2).toString().replace(".", ",")}</span>
+              {pijama.on_sale && (
+                <span>
+                  R$ {pijama.price.toFixed(2).toString().replace(".", ",")}
+                </span>
               )}
               <p>
                 R${" "}
-                {(onSale ? priceOnSale : price)
+                {(pijama.on_sale ? priceOnSale : pijama.price)
                   .toFixed(2)
                   .toString()
                   .replace(".", ",")}
@@ -50,7 +63,11 @@ export default function Pijama() {
             </div>
             <div className={style.pricesRightSide}>
               <p>
-                6x de <span>R$13,15</span>
+                6x de {""}
+                <span>
+                  R${""}
+                  {installmentPrice}
+                </span>
               </p>
             </div>
           </div>
@@ -101,12 +118,7 @@ export default function Pijama() {
       </div>
       <div className={style.descriptionSection}>
         <h3>SOBRE NOSSO PIJAMA</h3>
-        <p>
-          Esse pijama é perfeito para as noites mais frias do inverno, isso
-          graças ao seu tecido que é de alta qualidade, feito com o mais puro
-          algodão da Suécia. Além disso, sua cor sofisticada traz a sensação de
-          fineza e conforto, o que reflete a alta costura da peça.
-        </p>
+        <p>{pijama.description}</p>
         <h4>Contém:</h4>
         <ul>
           <li>
