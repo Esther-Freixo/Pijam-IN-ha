@@ -1,0 +1,54 @@
+import React from "react";
+import styles from "./styles.module.css";
+import coracaoIcon from "../../assets/icons/coracaoOff.png";
+import descontoIcon from "../../assets/icons/desconto.png";
+
+
+interface ProductCardProps {
+  id: number;
+  nome: string;
+  preco: number;
+  precoPromocional?: number;
+  imagem: string;
+  genero: string;
+  tipo: string;
+  estacao: string;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({
+  nome,
+  preco,
+  precoPromocional,
+  imagem,
+}) => {
+  return (
+    <div className={styles.card}>
+      <div className={styles.imageContainer}>
+        <img src={imagem} alt={nome} className={styles.image} />
+        <div className={styles.heartIcon}>
+          <img src={coracaoIcon} alt="Coração" />
+        </div>
+        {precoPromocional && (
+          <div className={styles.discountIcon}>
+            <img src={descontoIcon} alt="Desconto" />
+          </div>
+        )}
+      </div>
+      <div className={styles.contentBox}>
+        <h3 className={styles.name}>{nome}</h3>
+        {precoPromocional ? (
+          <div className={styles.priceBox}>
+            <p className={styles.oldPrice}>R$ {preco.toFixed(2)}</p>
+            <p className={styles.promoPrice}>
+              R$ {precoPromocional.toFixed(2)}
+            </p>
+          </div>
+        ) : (
+          <p className={styles.price}>R$ {preco.toFixed(2)}</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;

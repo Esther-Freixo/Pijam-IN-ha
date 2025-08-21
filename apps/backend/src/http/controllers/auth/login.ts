@@ -1,10 +1,10 @@
 import type { FastifyReply, FastifyRequest } from "fastify";
 import z from "zod";
 import { PrismaUsersRepository } from "../../../repositories/prisma/prisma-users-repository.ts";
-import { AuthenticateUseCase } from "../../../use-cases/users/authenticate-use-case.ts";
+import { AuthenticateUseCase } from "../../../use-cases/users/login-use-case.ts";
 
 
-export async function authenticate(request: FastifyRequest, reply: FastifyReply) {
+export async function loginController(request: FastifyRequest, reply: FastifyReply) {
     const authenticateBodySchema = z.object({
       email: z.string().email(),
       password: z.string().min(6),

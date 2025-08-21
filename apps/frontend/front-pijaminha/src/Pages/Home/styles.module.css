@@ -82,7 +82,12 @@
     width: 324px;
 }
 
+.tituloFeedback{
+    margin-top: 147px;
+}
+
 .tituloSecao {
+
     font-family: 'Numans';
     font-weight: 400;
     font-size: 48px;

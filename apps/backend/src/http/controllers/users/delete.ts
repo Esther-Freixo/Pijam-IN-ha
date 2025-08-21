@@ -1,5 +1,3 @@
-// src/http/controllers/users/update.ts
-
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { z } from 'zod';
 import { DeleteUserUseCase } from '../../../use-cases/users/delete-use-case.ts';

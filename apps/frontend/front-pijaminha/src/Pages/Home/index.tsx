@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import banner1 from "../../assets/banners/bannerNatal.png";
@@ -11,50 +10,76 @@ import pessoas from "../../assets/icons/people.png";
 import caminhao from "../../assets/icons/caminhaodelivery.png";
 import pijama from "../../assets/icons/pijamafeminino.png";
 
-const fotosDoCarrossel = [
-  banner1,
-  banner2,
-  banner3
-];
+import ProductList from "../../components/ProductList";
+import produtosData from "../../produtos.json";
+
+interface Produto {
+  id: number;
+  nome: string;
+  preco: number;
+  precoPromocional?: number;
+  imagem: string;
+  genero: string;
+  tipo: string;
+  estacao: string;
+}
+
+const fotosDoCarrossel = [banner1, banner2, banner3];
 
 export default function Home() {
-    return (
-        <>
-            <div className={styles.areaAzul}>
-                <img src={logo1} alt="Logo" />
-                <p className={styles.paragrafoLogo}>Se os lobos soubessem desse conforto, nem sopravam casas, iam dormir!</p>
-            </div>
-            <div className={styles.areaBranca}>
-                <div className={styles.carrossel}>
-                    <Carrossel images={fotosDoCarrossel} />
-                </div>
+  const produtosPromocionais = (produtosData as Produto[]).filter(
+    (p) => p.precoPromocional
+  );
+  const promocoesDestaque = produtosPromocionais.slice(0, 3);
 
-                <div className={styles.info}>
-                    <div className={styles.fotoEtexto}>
-                        <img src={pijama} alt="pijama" />
-                        <p id={styles.pijamatxt}>Pijamas confortáveis e com tecnologia</p>
-                    </div>
-                    <div className={styles.fotoEtexto}>
-                        <img src={pessoas} alt="pessoas" />
-                        <p id={styles.pessoastxt}>Modelos para todas as idades e tamanhos</p>
-                    </div>
-                    <div className={styles.fotoEtexto}>
-                        <img src={caminhao} alt="caminhao" />
-                        <p id={styles.caminhaotxt}>Frete grátis em todo o Brasil e exterior</p>
-                    </div>
-                </div>
-                <div>
-                    <h1 className={styles.tituloSecao}>Nossas últimas promoções!</h1>
-                </div>
-                <div>
-                    <CaixaFeedback/>
-                </div>
-                <div className={styles.feedbackSecao}>
-                    <Link className={styles.botao} to="/feedback">
-                        Também quero dar um feedback!
-                    </Link>
-                </div>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className={styles.areaAzul}>
+        <img src={logo1} alt="Logo" />
+        <p className={styles.paragrafoLogo}>
+          Se os lobos soubessem desse conforto, nem sopravam casas, iam dormir!
+        </p>
+      </div>
+
+      <div className={styles.carrossel}>
+        <Carrossel images={fotosDoCarrossel} />
+      </div>
+
+      <div className={styles.areaBranca}>
+        <div className={styles.info}>
+          <div className={styles.fotoEtexto}>
+            <img src={pijama} alt="pijama" />
+            <p id={styles.pijamatxt}>Pijamas confortáveis e com tecnologia</p>
+          </div>
+          <div className={styles.fotoEtexto}>
+            <img src={pessoas} alt="pessoas" />
+            <p id={styles.pessoastxt}>
+              Modelos para todas as idades e tamanhos
+            </p>
+          </div>
+          <div className={styles.fotoEtexto}>
+            <img src={caminhao} alt="caminhao" />
+            <p id={styles.caminhaotxt}>
+              Frete grátis em todo o Brasil e exterior
+            </p>
+          </div>
+        </div>
+        <div>
+          <h1 className={styles.tituloSecao}>Nossas últimas promoções!</h1>
+        </div>
+        <div className={styles.promocoes}>
+          <ProductList produtos={promocoesDestaque} />
+        </div>
+         
+        <div>
+           <CaixaFeedback/>
+        </div> 
+        <div className={styles.feedbackSecao}>
+          <Link className={styles.botao} to="/feedback">
+            Também quero dar um feedback!
+          </Link>
+        </div>
+      </div>
+    </>
+  );
 }
