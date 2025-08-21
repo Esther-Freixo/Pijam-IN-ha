@@ -8,11 +8,27 @@ import inverno from "../../assets/icons/inverno.png";
 import unissex from "../../assets/icons/unissex.png";
 import adulto from "../../assets/icons/adulto.png";
 import favoritedIcon from "../../assets/icons/coracaoOn.png";
+import { usePijamasContext } from "../../hooks/usePijamasContext";
+import { useParams } from "react-router-dom";
 
 export default function Pijama() {
+  const { pijamaId } = useParams();
   const [selectedSize, setSelectedSize] = useState<Size | null>(null);
   const [isFavorited, setIsFavorited] = useState<boolean>(false);
-  const onSale = false;
+  const { pijamas } = usePijamasContext();
+
+  if (!pijamas || pijamas.length === 0) {
+    return <div>Carregando...</div>;
+  }
+
+  const pijama = pijamas.find(
+    (pijama) => Number(pijama.id) === Number(pijamaId)
+  );
+  console.log(pijama);
+  if (!pijama) {
+    return <div>Pijama nao encontrado</div>;
+  }
+  const onSale = true;
   const price: number = 78.9;
   const priceOnSale: number = price * 0.85;
   const pricePix: number = (onSale ? priceOnSale : price) * 0.85;
@@ -25,7 +41,7 @@ export default function Pijama() {
         </div>
         <div className={style.pajamaData}>
           <div className={style.pajamaTitle}>
-            <h2>PIJAMA FEMININO LONGO - ESTAMPA POÁ</h2>
+            <h2>{pijama.description}</h2>
             <span>Ref: #123456</span>
           </div>
           <div className={style.prices}>
