@@ -1,9 +1,8 @@
 import ProductList from "../../components/ProductList";
 import Pagination from "../../components/Pagination";
-import produtosData from "../../produtos.json";
 import SearchBar from "../../components/Pesquisa";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { usePijamasContext } from "../../hooks/usePijamasContext";
 import { useLocation } from "react-router-dom";
 
 interface Filtros {
@@ -14,8 +13,6 @@ interface Filtros {
 }
 
 export default function Lista_Pijamas() {
- 
-
   const location = useLocation();
 
   useEffect(() => {
@@ -29,6 +26,9 @@ export default function Lista_Pijamas() {
     }));
     setPaginaAtual(1);
   }, [location.search]);
+
+  const { pijamas } = usePijamasContext();
+
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [filtrosDeBusca, setFiltrosDeBusca] = useState<Filtros>({
     nome: "",
@@ -37,15 +37,15 @@ export default function Lista_Pijamas() {
     estacao: "",
   });
   const produtosPorPagina = 12;
-  const produtosFiltrados = produtosData.filter((produto) => {
+  const produtosFiltrados = pijamas.filter((produto) => {
     return (
-      produto.nome.toLowerCase().includes(filtrosDeBusca.nome.toLowerCase()) &&
+      produto.name.toLowerCase().includes(filtrosDeBusca.nome.toLowerCase()) &&
       (filtrosDeBusca.genero === "" ||
-        produto.genero.toLowerCase() === filtrosDeBusca.genero.toLowerCase()) &&
+        produto.gender.toLowerCase() === filtrosDeBusca.genero.toLowerCase()) &&
       (filtrosDeBusca.tipo === "" ||
-        produto.tipo.toLowerCase() === filtrosDeBusca.tipo.toLowerCase()) &&
+        produto.type.toLowerCase() === filtrosDeBusca.tipo.toLowerCase()) &&
       (filtrosDeBusca.estacao === "" ||
-        produto.estacao.toLowerCase() === filtrosDeBusca.estacao.toLowerCase())
+        produto.season.toLowerCase() === filtrosDeBusca.estacao.toLowerCase())
     );
   });
 

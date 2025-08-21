@@ -11,26 +11,32 @@ import caminhao from "../../assets/icons/caminhaodelivery.png";
 import pijama from "../../assets/icons/pijamafeminino.png";
 
 import ProductList from "../../components/ProductList";
-import produtosData from "../../produtos.json";
+import { usePijamasContext } from "../../hooks/usePijamasContext";
+// import produtosData from "../../produtos.json";
 
-interface Produto {
-  id: number;
-  nome: string;
-  preco: number;
-  precoPromocional?: number;
-  imagem: string;
-  genero: string;
-  tipo: string;
-  estacao: string;
-}
+// interface Produto {
+//   id: number;
+//   nome: string;
+//   preco: number;
+//   precoPromocional?: number;
+//   imagem: string;
+//   genero: string;
+//   tipo: string;
+//   estacao: string;
+// }
 
 const fotosDoCarrossel = [banner1, banner2, banner3];
 
 export default function Home() {
-  const produtosPromocionais = (produtosData as Produto[]).filter(
-    (p) => p.precoPromocional
+  // const produtosPromocionais = (produtosData as Produto[]).filter(
+  //   (p) => p.precoPromocional
+  // );
+  // const promocoesDestaque = produtosPromocionais.slice(0, 3);
+
+  const { pijamas } = usePijamasContext();
+  const pijamasOnSale = pijamas.filter(
+    (pijama) => Boolean(pijama.on_sale) === true
   );
-  const promocoesDestaque = produtosPromocionais.slice(0, 3);
 
   return (
     <>
@@ -68,12 +74,12 @@ export default function Home() {
           <h1 className={styles.tituloSecao}>Nossas últimas promoções!</h1>
         </div>
         <div className={styles.promocoes}>
-          <ProductList produtos={promocoesDestaque} />
+          <ProductList produtos={pijamasOnSale.slice(0, 3)} />
         </div>
-         
+
         <div>
-           <CaixaFeedback/>
-        </div> 
+          <CaixaFeedback />
+        </div>
         <div className={styles.feedbackSecao}>
           <Link className={styles.botao} to="/feedback">
             Também quero dar um feedback!
