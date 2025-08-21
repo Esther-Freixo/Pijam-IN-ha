@@ -1,5 +1,8 @@
 import { useContext } from "react";
-import { PijamasContext, type PijamasContextData } from "../stores/context";
+import {
+  PijamasContext,
+  type PijamasContextData,
+} from "../stores/pijamasContext";
 
 export function usePijamasContext(): PijamasContextData {
   const context = useContext(PijamasContext);
