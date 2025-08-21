@@ -7,9 +7,9 @@ import { updateStock } from './update.ts'
 import { remove } from './delete.ts'
 
 export async function pijamaRoutes(app: FastifyInstance) {
-  app.get('/pijama', list)
-  app.get('/pijama/:pijamaId', getDetails)
-  app.post('/pijama', { onRequest: [verifyJWT] }, create)
-  app.patch('/pijama/:pijamaId/stock', { onRequest: [verifyJWT] }, updateStock)
-  app.delete('/pijama/:pijamaId', { onRequest: [verifyJWT] }, remove)
+  app.get('/pijamas', list)
+  app.get('/pijamas/:pijamaId', getDetails)
+  app.post('/pijamas', { onRequest: [verifyJWT] }, create)
+  app.patch('/pijamas/:pijamaId/stock', { onRequest: [verifyJWT] }, updateStock)
+  app.delete('/pijamas/:pijamaId', { onRequest: [verifyJWT] }, remove)
 }
