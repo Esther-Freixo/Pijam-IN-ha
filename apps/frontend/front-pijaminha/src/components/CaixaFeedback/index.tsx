@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 import estrelaCheia from "../../assets/icons/estrelavermelhacheia.png";
 import estrelaMetade from "../../assets/icons/estrelavermelhametadeC.png";
@@ -6,6 +6,17 @@ import estrelaVazia from "../../assets/icons/estrelavermelhavazia.png";
 import setaEsquerda from "../../assets/buttons/btnSetaEsquerda.png";
 import setaDireita from "../../assets/buttons/btnSetaDireita.png";
 import { useFeedbacks } from "../../hooks/useFeedbacks";
+
+// const mockFeedbacks = [
+//     { name: 'Fulano da Silva ', description: 'provident et ipsum desdfdsuibusdam.', rating: 4.5 },
+//     { name: 'Beltrano Souza', description: 'Et voluptatem officia ad sint...', rating: 4.0 },
+//     { name: 'Ciclano Mendes', description: 'Voluptate qui voluptatem sed...', rating: 5.0 },
+//     { name: 'Outro Usuário', description: 'Lorem ipsum dolor sit amet...', rating: 3.5 },
+//     { name: 'Maria Joaquina', description: 'Sed optio veniam aut preferendis...', rating: 4.8 },
+//     { name: 'José Pereira', description: 'Aliquam impedit a quas animi...', rating: 4.2 },
+//     { name: 'Ana Carolina', description: 'Provident et ipsum deleniti eos...', rating: 5.0 },
+//     { name: 'Carlos Augusto', description: 'Voluptas sunt non fugiat labore...', rating: 4.7 },
+// ];
 
 const CaixaFeedback = () => {
   const { feedbacks } = useFeedbacks();
@@ -88,7 +99,7 @@ const CaixaFeedback = () => {
             onClick={handleNext}
             className={styles.botao}
             disabled={
-              currentIndex + feedbacksPerPage >= filteredFeedbacks.length
+              currentIndex >= filteredFeedbacks.length - feedbacksPerPage
             }
           >
             <img src={setaDireita} alt="Próximo" className={styles.seta} />
