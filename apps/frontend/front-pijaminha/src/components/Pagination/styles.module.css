@@ -1,57 +1,65 @@
+/* Container principal da paginação */
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 36px; /* Aumentei o espaçamento para combinar com a imagem */
   margin: 2rem 0;
   font-family: sans-serif;
 }
 
-.pageButton,
-.arrowButton {
+/* Estilo para os botões de números */
+.pageButton {
   background: none;
-  border: 1px solid #72A8C1;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+  border: none; /* Removido a borda */
+  padding: 0;
+  width: auto;
+  height: auto;
+  font-size: 1.25rem; /* Aumentei o tamanho da fonte */
   color: #274553;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.pageButton:hover:not(:disabled),
-.arrowButton:hover:not(:disabled) {
-  background-color: #72A8C1;
+/* Estilo para os botões de números ativos */
+.active {
+  background-color: #9fc2d2; /* Cor de fundo do número ativo (o azul claro da imagem) */
   color: #fff;
+  border-radius: 50%;
+  width: 40px; /* Aumentei o tamanho para o círculo ser mais visível */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.25rem; /* Aumentei o tamanho da fonte */
+  border: none; /* Removido a borda */
+}
+
+/* Estilo para os botões de seta (< >) */
+.arrowButton {
+  background: none;
+  border: none; /* Removido a borda */
+  font-size: 2rem; /* Aumentei bastante o tamanho para combinar com a imagem */
+  color: #274553;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pageButton:disabled,
 .arrowButton:disabled {
   color: #ccc;
-  border-color: #ccc;
   cursor: not-allowed;
 }
 
-.active {
-  background-color: #72A8C1;
-  color: #fff;
-  font-weight: bold;
-  border: 1px solid #72A8C1;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-}
-
+/* Estilo para os três pontinhos */
 .dots {
   color: #274553;
-  font-size: 1rem;
+  font-size: 1.5rem; /* Aumentei o tamanho */
   margin: 0 4px;
 }

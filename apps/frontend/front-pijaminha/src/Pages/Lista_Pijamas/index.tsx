@@ -1,9 +1,9 @@
-
 import ProductList from "../../components/ProductList";
 import Pagination from "../../components/Pagination";
-import produtosData from "../../produtos.json";
 import SearchBar from "../../components/Pesquisa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePijamasContext } from "../../hooks/usePijamasContext";
+import { useLocation } from "react-router-dom";
 
 interface Filtros {
   nome: string;
@@ -12,22 +12,40 @@ interface Filtros {
   estacao: string;
 }
 
-
 export default function Lista_Pijamas() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const genero = params.get("genero") || "";
+    const tipo = params.get("tipo") || "";
+    setFiltrosDeBusca((filtros) => ({
+      ...filtros,
+      genero,
+      tipo,
+    }));
+    setPaginaAtual(1);
+  }, [location.search]);
+
+  const { pijamas } = usePijamasContext();
+
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [filtrosDeBusca, setFiltrosDeBusca] = useState<Filtros>({
-    nome: '',
-    genero: '',
-    tipo: '',
-    estacao: '',
+    nome: "",
+    genero: "",
+    tipo: "",
+    estacao: "",
   });
   const produtosPorPagina = 12;
-  const produtosFiltrados = produtosData.filter(produto => {
+  const produtosFiltrados = pijamas.filter((produto) => {
     return (
-      produto.nome.toLowerCase().includes(filtrosDeBusca.nome.toLowerCase()) &&
-      (filtrosDeBusca.genero === '' || produto.genero === filtrosDeBusca.genero) &&
-      (filtrosDeBusca.tipo === '' || produto.tipo === filtrosDeBusca.tipo) &&
-      (filtrosDeBusca.estacao === '' || produto.estacao === filtrosDeBusca.estacao)
+      produto.name.toLowerCase().includes(filtrosDeBusca.nome.toLowerCase()) &&
+      (filtrosDeBusca.genero === "" ||
+        produto.gender.toLowerCase() === filtrosDeBusca.genero.toLowerCase()) &&
+      (filtrosDeBusca.tipo === "" ||
+        produto.type.toLowerCase() === filtrosDeBusca.tipo.toLowerCase()) &&
+      (filtrosDeBusca.estacao === "" ||
+        produto.season.toLowerCase() === filtrosDeBusca.estacao.toLowerCase())
     );
   });
 
@@ -56,4 +74,4 @@ export default function Lista_Pijamas() {
       />
     </div>
   );
-};
+}

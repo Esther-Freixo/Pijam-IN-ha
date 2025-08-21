@@ -1,51 +1,55 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 import coracaoIcon from "../../assets/icons/coracaoOff.png";
 import descontoIcon from "../../assets/icons/desconto.png";
-
+import type { Pijama } from "../../Types/Pijama";
 
 interface ProductCardProps {
-  id: number;
-  nome: string;
-  preco: number;
-  precoPromocional?: number;
-  imagem: string;
-  genero: string;
-  tipo: string;
-  estacao: string;
+  pijama: Pijama;
 }
+const ProductCard: React.FC<ProductCardProps> = ({ pijama }) => {
+  const navigate = useNavigate();
+  const { id, name, image, price, on_sale, sale_percent } = pijama;
 
-const ProductCard: React.FC<ProductCardProps> = ({
-  nome,
-  preco,
-  precoPromocional,
-  imagem,
-}) => {
+  const priceOnSale = price * (1 - (sale_percent ?? 0));
+  const valorFinal = priceOnSale || price;
+  const valorParcela = valorFinal / 6;
+
+  const handleClick = () => {
+    navigate(`/pijama/${id}`);
+  };
+
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      onClick={handleClick}
+      style={{ cursor: "pointer" }}
+    >
       <div className={styles.imageContainer}>
-        <img src={imagem} alt={nome} className={styles.image} />
+        <img src={image} alt={name} className={styles.image} />
         <div className={styles.heartIcon}>
           <img src={coracaoIcon} alt="Coração" />
         </div>
-        {precoPromocional && (
+        {on_sale && (
           <div className={styles.discountIcon}>
             <img src={descontoIcon} alt="Desconto" />
           </div>
         )}
       </div>
       <div className={styles.contentBox}>
-        <h3 className={styles.name}>{nome}</h3>
-        {precoPromocional ? (
+        <h3 className={styles.name}>{name}</h3>
+        {on_sale ? (
           <div className={styles.priceBox}>
-            <p className={styles.oldPrice}>R$ {preco.toFixed(2)}</p>
-            <p className={styles.promoPrice}>
-              R$ {precoPromocional.toFixed(2)}
-            </p>
+            <p className={styles.oldPrice}>R$ {price.toFixed(2)}</p>
+            <p className={styles.promoPrice}>R$ {priceOnSale.toFixed(2)}</p>
           </div>
         ) : (
-          <p className={styles.price}>R$ {preco.toFixed(2)}</p>
+          <p className={styles.price}>R$ {price.toFixed(2)}</p>
         )}
+        <p className={styles.installments}>
+          6x de R$ {valorParcela.toFixed(2)}
+        </p>
       </div>
     </div>
   );
