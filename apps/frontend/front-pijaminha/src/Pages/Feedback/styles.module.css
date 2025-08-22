@@ -117,3 +117,33 @@
     margin-bottom: 29px;
     align-self: center;
 }
+
+.starContainer {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.starImg {
+  width: 40px;
+  height: 40px;
+  display: block;
+  pointer-events: none;
+}
+
+.halfLeft,
+.halfRight {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.halfLeft {
+  left: 0;
+}
+
+.halfRight {
+  right: 0;
+}
