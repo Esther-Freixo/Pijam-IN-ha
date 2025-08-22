@@ -14,7 +14,6 @@ export class PrismaUsersRepository implements UsersRepository {
         email,
       },
     });
-
     return user;
   }
 
@@ -27,6 +26,19 @@ export class PrismaUsersRepository implements UsersRepository {
     return user;
   }
 
+  async findByEmailOrUsername(identifier: string) {
+    const lowerCaseIdentifier = identifier.toLowerCase();
+    return await prisma.user.findFirst({
+      where: {
+        OR: [{
+          email: lowerCaseIdentifier
+        }, {
+          username: lowerCaseIdentifier
+        }, ],
+      },
+    });
+  }
+
   async update(id: string, data: UserUpdateInput) {
     const userExists = await this.findById(id);
     if (!userExists) {
@@ -35,11 +47,10 @@ export class PrismaUsersRepository implements UsersRepository {
 
     const user = await prisma.user.update({
       where: {
-        id: id,
+        id,
       },
-      data: data,
+      data,
     });
-
     return user;
   }
 
@@ -51,16 +62,14 @@ export class PrismaUsersRepository implements UsersRepository {
 
     const user = await prisma.user.delete({
       where: {
-        id: id,
+        id,
       },
     });
-
     return user;
   }
 
   async getAll() {
     const users = await prisma.user.findMany();
-
     return users;
   }
 }
