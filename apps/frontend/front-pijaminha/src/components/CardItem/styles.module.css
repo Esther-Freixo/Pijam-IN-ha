@@ -1,0 +1,103 @@
+.cartItemContainer {
+  background-image: url('../../assets/images/background.png'); /* Assumindo um background de padrão ZZZ */
+  background-repeat: repeat;
+  border: 1px solid #B0C4DE;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartItem img {
+    width: 182px;
+    height: 273px;
+}
+
+.pijamaInfo {
+  display: flex;
+  align-items: center;
+}
+
+.pijamaImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.details h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.ref {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 5px 0;
+}
+
+.sizeTag {
+  background-color: #B0C4DE;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  width: min-content;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.removeButton {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #777;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.quantityAndPrice {
+  display: flex;
+  align-items: center;
+}
+
+.quantitySection {
+  text-align: center;
+  margin-right: 20px;
+}
+
+.quantitySection p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.stockMessage {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+.stockMessage span {
+  font-weight: bold;
+  color: #000;
+}
+
+.itemPrice {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

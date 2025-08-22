@@ -9,6 +9,8 @@ import adulto from "../../assets/icons/adulto.png";
 import favoritedIcon from "../../assets/icons/coracaoOn.png";
 import { usePijamasContext } from "../../hooks/usePijamasContext";
 import { useParams } from "react-router-dom";
+import { useCart } from "../../stores/carrinhoContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Pijama() {
   const { pijamas } = usePijamasContext();
@@ -20,6 +22,9 @@ export default function Pijama() {
   const [isFavorited, setIsFavorited] = useState<boolean>(
     () => pijama?.favorite ?? false
   );
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+  const [quantity, setQuantity] = useState(1);
   if (!pijama) {
     return <div>Pijama nao encontrado</div>;
   }
@@ -90,9 +95,34 @@ export default function Pijama() {
               </p>
             )}
           </div>
-          <Quantidade />
+          <Quantidade
+  quantity={quantity}
+  onIncrease={() => setQuantity((prev) => prev + 1)}
+  onDecrease={() => setQuantity((prev) => Math.max(1, prev - 1))}
+/>
           <div className={style.cartAndFavoriteSection}>
-            <button>ADICIONAR AO CARRINHO</button>
+            <button
+  onClick={() => {
+    if (!selectedSize) {
+      alert("Selecione um tamanho");
+      return;
+    }
+
+  const item = {
+  id: String(pijama.id),
+  name: pijama.name,
+  image: pijama.image,
+  price: pijama.on_sale ? priceOnSale : pijama.price,
+  quantity: quantity,
+  size: selectedSize,
+};
+
+addToCart(item);
+navigate("/"); // Vai pra Home
+  }}
+>
+  ADICIONAR AO CARRINHO
+</button>
             <div
               className={`${style.favoriteIcon} ${
                 isFavorited ? style.favorited : ""

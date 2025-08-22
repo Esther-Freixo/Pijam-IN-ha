@@ -31,7 +31,10 @@ export default function Header() {
 
       <div className={style.icons}>
         <div className={style.productsIcons}>
-          <img src={cart} alt="Icone de carrinho" />
+          <img 
+          onClick={() => navigate("/carrinho")}
+          src={cart} 
+          alt="Icone de carrinho" />
           <img
             onClick={() => navigate("/favoritos")}
             src={fav}

@@ -18,3 +18,11 @@ export interface Pijama {
   sale_percent?: number;
   sizes: PijamaSize[];
 }
+export interface CartItem {
+  id: string;  
+  name: string;
+  image: string;
+  price: number;
+  quantity: number;
+  size: string;
+}
