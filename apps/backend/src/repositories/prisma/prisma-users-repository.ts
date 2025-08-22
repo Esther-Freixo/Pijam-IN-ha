@@ -1,22 +1,54 @@
-import type { UsersRepository, UserUpdateInput } from '../users-repository.ts';
+import type { UsersRepository, UserUpdateInput } from "../users-repository.ts";
 import { prisma } from "../../lib/prisma.ts";
-import { Prisma } from "@prisma/client"
+import { Prisma } from "@prisma/client";
 
 export class PrismaUsersRepository implements UsersRepository {
-    async create(data: Prisma.UserCreateInput) {
-        const user = await prisma.user.create({ data });
-        return user;
+  async create(data: Prisma.UserCreateInput) {
+    const user = await prisma.user.create({ data });
+    return user;
+  }
+
+  async findByEmail(email: string) {
+    const user = await prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
+
+    return user;
+  }
+
+  async findById(id: string) {
+    const user = await prisma.user.findUnique({
+      where: {
+        id,
+      },
+    });
+    return user;
+  }
+
+  async update(id: string, data: UserUpdateInput) {
+    const userExists = await this.findById(id);
+    if (!userExists) {
+      return null;
     }
 
-    async findByEmail(email: string) {
-        const user = await prisma.user.findUnique({
-            where: {
-                email
-            }
-        });
+    const user = await prisma.user.update({
+      where: {
+        id: id,
+      },
+      data: data,
+    });
 
-        return user;
+    return user;
+  }
+
+  async delete(id: string) {
+    const userExists = await this.findById(id);
+    if (!userExists) {
+      return null;
     }
+
 
     async findByEmailOrUsername(identifier: string) {
         const lowerCaseIdentifier = identifier.toLowerCase();
@@ -39,10 +71,13 @@ export class PrismaUsersRepository implements UsersRepository {
         return user;
     }
 
-    async update(id: string, data: UserUpdateInput) {
 
-        const userExists = await this.findById(id)
-        if (!userExists) { return null }
+    return user;
+  }
+
+  async getAll() {
+    const users = await prisma.user.findMany();
+
 
 
         const user = await prisma.user.update({
@@ -77,3 +112,4 @@ export class PrismaUsersRepository implements UsersRepository {
 
     }
 }
+

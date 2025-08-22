@@ -18,19 +18,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ pijama }) => {
   const valorFinal = priceOnSale || price;
   const valorParcela = valorFinal / 6;
 
-  // Estado local para favorito
   const [isFavorited, setIsFavorited] = useState<boolean>(favorite ?? false);
 
-  // Navegação para página do produto
   const handleClick = () => {
-    navigate(`/pijama/${id}`);
+    navigate(`/pijamas/${id}`);
   };
 
-  // Alterna favorito sem navegar
   const handleFavoriteClick = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Impede navegação ao clicar no coração
+    e.stopPropagation();
     setIsFavorited((prev) => !prev);
-    // Aqui você pode atualizar o contexto ou persistir no backend/localStorage se quiser
   };
 
   return (

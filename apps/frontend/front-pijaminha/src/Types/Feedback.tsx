@@ -3,3 +3,7 @@ export interface Feedback {
   description: string;
   rating: number;
 }
+
+export interface Feedbacks {
+  feedbacks: Feedback[] | [];
+}

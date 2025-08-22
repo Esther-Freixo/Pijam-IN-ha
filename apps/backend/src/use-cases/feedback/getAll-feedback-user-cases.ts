@@ -1,10 +1,9 @@
-import { type FeedbacksRepository} from '../../repositories/feedbacks-repository.ts'
-import { type Feedback } from '@prisma/client'
+import { type FeedbacksRepository } from "../../repositories/feedbacks-repository.ts";
+import { type Feedback } from "@prisma/client";
 
 interface GetFeedbacksUseCaseResponse {
-  feedback: Feedback[];
+  feedbacks: Feedback[];
 }
-
 
 export class GetFeedbacksUseCase {
   constructor(private readonly feedbacksRepository: FeedbacksRepository) {}
