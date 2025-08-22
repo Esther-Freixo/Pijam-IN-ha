@@ -23,8 +23,9 @@ export class AuthenticateUseCase {
         if (!identifier) {
             throw new InvalidCredentialsError();
         }
+        const lowerCaseIdentifier = identifier.toLowerCase();
 
-        const user = await this.usersRepository.findByEmailOrUsername(identifier);
+        const user = await this.usersRepository.findByEmailOrUsername(lowerCaseIdentifier);
 
 
         if (!user) {

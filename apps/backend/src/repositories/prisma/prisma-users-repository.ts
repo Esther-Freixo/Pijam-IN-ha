@@ -19,11 +19,12 @@ export class PrismaUsersRepository implements UsersRepository {
     }
 
     async findByEmailOrUsername(identifier: string) {
+        const lowerCaseIdentifier = identifier.toLowerCase();
         return await prisma.user.findFirst({
             where: {
                 OR: [
-                    { email: { equals: identifier, mode: "insensitive" } },
-                    { username: { equals: identifier, mode: "insensitive" } }
+                    { email: lowerCaseIdentifier },
+                    { username: lowerCaseIdentifier }
                 ]
             }
         });
