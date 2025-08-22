@@ -28,5 +28,6 @@ export class FavoriteUseCase {
     })
 
     return { pajama: updatedPajama }
+
   }
 }

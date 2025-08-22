@@ -30,4 +30,5 @@ export async function favorite(
     }
     return reply.status(500).send({ message: 'Internal Server Error' })
   }
+  
 }
