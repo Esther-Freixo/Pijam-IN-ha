@@ -49,11 +49,28 @@ export class PrismaUsersRepository implements UsersRepository {
       return null;
     }
 
-    const user = await prisma.user.delete({
-      where: {
-        id: id,
-      },
-    });
+
+    async findByEmailOrUsername(identifier: string) {
+        const lowerCaseIdentifier = identifier.toLowerCase();
+        return await prisma.user.findFirst({
+            where: {
+                OR: [
+                    { email: lowerCaseIdentifier },
+                    { username: lowerCaseIdentifier }
+                ]
+            }
+        });
+    }
+
+    async findById(id: string) {
+        const user = await prisma.user.findUnique({
+            where: {
+                id
+            }
+        });
+        return user;
+    }
+
 
     return user;
   }
@@ -61,6 +78,38 @@ export class PrismaUsersRepository implements UsersRepository {
   async getAll() {
     const users = await prisma.user.findMany();
 
-    return users;
-  }
+
+
+        const user = await prisma.user.update({
+            where: {
+                id: id
+            },
+            data: data
+        })
+
+        return user
+    }
+
+    async delete(id: string) {
+
+        const userExists = await this.findById(id)
+        if (!userExists) { return null }
+
+        const user = await prisma.user.delete({
+            where: {
+                id: id
+            }
+        })
+
+        return user
+    }
+
+    async getALL() {
+
+        const users = await prisma.user.findMany()
+
+        return users
+
+    }
 }
+

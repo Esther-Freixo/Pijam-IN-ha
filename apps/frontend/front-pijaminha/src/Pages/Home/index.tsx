@@ -17,9 +17,9 @@ const fotosDoCarrossel = [banner1, banner2, banner3];
 
 export default function Home() {
   const { pijamas } = usePijamasContext();
-  const pijamasOnSale = pijamas.filter(
-    (pijama) => Boolean(pijama.on_sale) === true
-  );
+  const pijamasOnSale = Array.isArray(pijamas) ? 
+  pijamas.filter((pijama) => Boolean(pijama.on_sale) === true) : 
+  [];
 
   return (
     <>

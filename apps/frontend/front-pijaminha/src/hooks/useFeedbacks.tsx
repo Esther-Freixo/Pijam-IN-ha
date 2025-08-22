@@ -7,8 +7,10 @@ interface FectchFeedbacks {
 }
 
 export function useFeedbacks() {
+
   const [feedbacks, setFeedbacks] = useState<FectchFeedbacks>();
   const url = "http://localhost:3333/feedbacks";
+
   useEffect(() => {
     axios
       .get(url)
