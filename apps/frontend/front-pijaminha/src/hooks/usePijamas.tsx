@@ -5,13 +5,13 @@ import axios from "axios";
 export function usePijamas() {
   const [pijamas, setPijamas] = useState<Pijama[]>([]);
 
-  const url = "http://localhost:3001/produtos";
+  const url = "http://localhost:3333/pijamas";
   useEffect(() => {
     axios
       .get(url)
       .then((response) => {
         console.log(response);
-        setPijamas(response.data);
+        setPijamas(response.data.pijamas);
       })
       .catch((error) => console.error("Algo deu errado: " + error));
   }, []);

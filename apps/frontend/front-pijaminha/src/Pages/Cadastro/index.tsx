@@ -2,13 +2,15 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import styles from "./styles.module.css";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const cadastroSchema = z.object({
   nome: z.string().nonempty('O nome não pode ser vazio')
     .refine(value => !/\d/.test(value), 'O nome não pode conter números'),
   usuario: z.string().nonempty('O nome de usuário não pode ser vazio')
     .refine(value => !value.includes(' ') && !/[áéíóúÁÉÍÓÚãõÃÕâêîôûÂÊÎÔÛ]/.test(value), 
-    'O nome de usuário não pode ter espaços ou acentos'),
+      'O nome de usuário não pode ter espaços ou acentos'),
   email: z.string().nonempty('O e-mail não pode ser vazio')
     .email('O e-mail não é válido'),
   senha: z.string().nonempty('A senha não pode ser vazia')
@@ -23,6 +25,8 @@ const cadastroSchema = z.object({
 type CadastroData = z.infer<typeof cadastroSchema>;
 
 export default function Cadastro() {
+    const navigate = useNavigate();
+
     const { 
         register, 
         handleSubmit, 
@@ -35,15 +39,34 @@ export default function Cadastro() {
 
     async function handleRegister(data: CadastroData) {
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            console.log('Dados a serem enviados:', data);
-            console.log('Usuário registrado com sucesso!');
-            reset();
-            alert('Cadastro realizado com sucesso! Você já pode fazer login.');
-        } catch (error) {
-            setError('root', {
-                message: "Erro ao registrar. Tente novamente."
+            const response = await axios.post('http://localhost:3333/auth/register', {
+                name: data.nome,
+                username: data.usuario,
+                email: data.email,
+                password: data.senha,
             });
+
+            if (response.status === 201) {
+                alert('Cadastro realizado com sucesso! Você já pode fazer login.');
+                reset();
+                navigate('/login');
+            }
+        } catch (error) {
+            if (axios.isAxiosError(error) && error.response) {
+                if (error.response.status === 409) {
+                    setError('root', {
+                        message: "Erro: O e-mail ou nome de usuário já está em uso."
+                    });
+                } else {
+                    setError('root', {
+                        message: "Ocorreu um erro no servidor. Tente novamente."
+                    });
+                }
+            } else {
+                setError('root', {
+                    message: "Ocorreu um erro de rede. Verifique sua conexão."
+                });
+            }
         }
     }
 
@@ -76,22 +99,18 @@ export default function Cadastro() {
                         />
                         {errors.email && <span className={styles.error}>{errors.email.message}</span>}
 
-                        <div className={styles.senha}>
-                            <input 
-                                type="password"
-                                placeholder='Senha'
-                                {...register('senha')}
-                            />
-                        </div>
+                        <input 
+                            type="password"
+                            placeholder='Senha'
+                            {...register('senha')}
+                        />
                         {errors.senha && <span className={styles.error}>{errors.senha.message}</span>}
                         
-                        <div className={styles.senha}>
-                            <input 
-                                type="password"
-                                placeholder='Confirmar senha'
-                                {...register('confirmarSenha')}
-                            />
-                        </div>
+                        <input 
+                            type="password"
+                            placeholder='Confirmar senha'
+                            {...register('confirmarSenha')}
+                        />
                         {errors.confirmarSenha && <span className={styles.error}>{errors.confirmarSenha.message}</span>}
                         
                         {errors.root && <span className={styles.error}>{errors.root.message}</span>}

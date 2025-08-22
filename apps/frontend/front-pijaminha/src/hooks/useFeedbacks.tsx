@@ -4,7 +4,7 @@ import axios from "axios";
 
 export function useFeedbacks() {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
-  const url = "http://localhost:3000/feedbacks";
+  const url = "http://localhost:3001/feedbacks";
   useEffect(() => {
     axios
       .get(url)
