@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { useEstrela } from "../../hooks/useEstrela";
 import axios from "axios";
-
 import estrelaCheia from "../../assets/icons/estrelacheia.png";
 import estrelaVazia from "../../assets/icons/estrelavazia.png";
+import estrelaMeia from "../../assets/icons/estrelabrancametade.png";
 
 export default function Feedback() {
   const { rating, hover, handleClick, handleMouseEnter, handleMouseLeave } = useEstrela();
@@ -31,7 +31,7 @@ export default function Feedback() {
       setName("");
       setDescription("");
       handleClick(0);
-    } catch (err) {
+    } catch {
       alert("Erro ao enviar feedback. Tente novamente.");
     } finally {
       setLoading(false);
@@ -60,20 +60,37 @@ export default function Feedback() {
           <div className={styles.avaliacao}>
             {[...Array(5)].map((_, index) => {
               const starValue = index + 1;
+              const currentValue = hover || rating;
+
+              let imgSrc = estrelaVazia;
+              if (currentValue >= starValue) {
+                imgSrc = estrelaCheia;
+              } else if (currentValue + 0.5 === starValue) {
+                imgSrc = estrelaMeia;
+              }
+
               return (
-                <button
+                <div
                   key={index}
-                  type="button"
-                  onClick={() => handleClick(starValue)}
-                  onMouseEnter={() => handleMouseEnter(starValue)}
+                  className={styles.starContainer}
                   onMouseLeave={handleMouseLeave}
-                  className={styles.botaoEstrela}
                 >
                   <img
-                    src={starValue <= (hover || rating) ? estrelaCheia : estrelaVazia}
+                    src={imgSrc}
                     alt={`${starValue} estrelas`}
+                    className={styles.starImg}
                   />
-                </button>
+                  <div
+                    className={styles.halfLeft}
+                    onMouseEnter={() => handleMouseEnter(starValue - 0.5)}
+                    onClick={() => handleClick(starValue - 0.5)}
+                  />
+                  <div
+                    className={styles.halfRight}
+                    onMouseEnter={() => handleMouseEnter(starValue)}
+                    onClick={() => handleClick(starValue)}
+                  />
+                </div>
               );
             })}
           </div>
