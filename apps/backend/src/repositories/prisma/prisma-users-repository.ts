@@ -17,17 +17,16 @@ export class PrismaUsersRepository implements UsersRepository {
 
         return user;
     }
-    
+
     async findByEmailOrUsername(identifier: string) {
-        const user = await prisma.user.findFirst({
+        return await prisma.user.findFirst({
             where: {
                 OR: [
-                    { email: identifier },
-                    { username: identifier }
+                    { email: { equals: identifier, mode: "insensitive" } },
+                    { username: { equals: identifier, mode: "insensitive" } }
                 ]
             }
         });
-        return user;
     }
 
     async findById(id: string) {
