@@ -14,11 +14,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function Pijama() {
   const { pijamas } = usePijamasContext();
-  console.log(typeof pijamas);
   const { pijamaId } = useParams();
   const [selectedSize, setSelectedSize] = useState<Size | null>(null);
   const pijama = pijamas.find((pijama) => pijama.id === pijamaId);
-  console.log(pijama?.image);
   const [isFavorited, setIsFavorited] = useState<boolean>(
     () => pijama?.favorite ?? false
   );
