@@ -10,7 +10,6 @@ import { useState } from "react";
 
 const CaixaFeedback = () => {
   const { feedbacks } = useFeedbacks();
-  console.log("feedbacks", feedbacks);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const filteredFeedbacks = feedbacks?.feedbacks.filter((fb) => fb.rating >= 4);

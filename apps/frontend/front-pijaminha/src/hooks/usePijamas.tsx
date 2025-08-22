@@ -10,7 +10,9 @@ export function usePijamas() {
     axios
       .get(url)
       .then((response) => {
+
         setPijamas(response.data.pajamas);
+
       })
       .catch((error) => console.error("Algo deu errado: " + error));
   }, []);
