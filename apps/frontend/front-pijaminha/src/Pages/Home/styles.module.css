@@ -1,117 +1,116 @@
 .areaAzul {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('../../assets/backgorund/fundobrancocorreto.png');
-    background-size: 100%;
-    background-color: var(--azul100);
-    background-position: center;
-    padding: 40px 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../../assets/backgorund/fundobrancocorreto.png");
+  background-size: 100%;
+  background-color: var(--azul100);
+  background-position: center;
+  padding: 40px 20px;
 }
 
 .areaAzul img {
-    width: 346px;
-    height: 343.02px;
+  width: 346px;
+  height: 343.02px;
 }
 
 .paragrafoLogo {
-    height: 106px;
-    width: 763px;
+  height: 106px;
+  width: 763px;
 }
 
 .areaAzul p {
-    margin-top: 40px;
-    color: var(--azul400);
-    font-family: 'Nunito Sans';
-    font-style: italic;
-    font-size: 39px;
-    font-weight: 400;
-    text-align: center;
+  margin-top: 40px;
+  color: var(--azul400);
+  font-family: "Nunito Sans";
+  font-style: italic;
+  font-size: 39px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .areaBranca {
-    background-image: url('../../assets/backgorund/fundoazulhorizontal.png');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+  background-image: url("../../assets/backgorund/fundoazulhorizontal.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
 .info {
-    margin-top: 96px;
-    margin-bottom: 87px;
-    display: flex;
-    justify-content: center;
-    gap: 100px;
+  margin-top: 96px;
+  margin-bottom: 87px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
 }
 
 .fotoEtexto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
 }
 
 .fotoEtexto img {
-    height: 150px;
-    width: 150px;
+  height: 150px;
+  width: 150px;
 }
 
 .fotoEtexto p {
-    color: var(--preto);
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 32px;
-    line-height: 1.4;
-    text-align: center;
-    height: 88px;
+  color: var(--preto);
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1.4;
+  text-align: center;
+  height: 88px;
 }
 
 #pijamatxt {
-    width: 315px;
+  width: 315px;
 }
 
 #pessoastxt {
-    width: 333px;
+  width: 333px;
 }
 
 #caminhaotxt {
-    width: 324px;
+  width: 324px;
 }
 
-.tituloFeedback{
-    margin-top: 147px;
+.tituloFeedback {
+  margin-top: 147px;
 }
 
 .tituloSecao {
-
-    font-family: 'Numans';
-    font-weight: 400;
-    font-size: 48px;
-    color: var(--vermelho400);
+  font-family: "Numans";
+  font-weight: 400;
+  font-size: 48px;
+  color: var(--vermelho400);
 }
 
 .feedbackSecao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 36px;
 }
 
 .botao {
-    width: 722px;
-    height: 98px;
-    background-color: var(--azul200);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
-    font-weight: 400;
-    text-decoration: none;
-    cursor: pointer;
+  width: 722px;
+  height: 98px;
+  background-color: var(--azul200);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
 }

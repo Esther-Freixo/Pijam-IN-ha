@@ -12,27 +12,10 @@ import pijama from "../../assets/icons/pijamafeminino.png";
 
 import ProductList from "../../components/ProductList";
 import { usePijamasContext } from "../../hooks/usePijamasContext";
-// import produtosData from "../../produtos.json";
-
-// interface Produto {
-//   id: number;
-//   nome: string;
-//   preco: number;
-//   precoPromocional?: number;
-//   imagem: string;
-//   genero: string;
-//   tipo: string;
-//   estacao: string;
-// }
 
 const fotosDoCarrossel = [banner1, banner2, banner3];
 
 export default function Home() {
-  // const produtosPromocionais = (produtosData as Produto[]).filter(
-  //   (p) => p.precoPromocional
-  // );
-  // const promocoesDestaque = produtosPromocionais.slice(0, 3);
-
   const { pijamas } = usePijamasContext();
   const pijamasOnSale = pijamas.filter(
     (pijama) => Boolean(pijama.on_sale) === true
