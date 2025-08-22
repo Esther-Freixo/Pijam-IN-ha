@@ -8,6 +8,8 @@ import type { Pijama } from "../../Types/Pijama";
 
 interface ProductCardProps {
   pijama: Pijama;
+  width?: string;
+  height?: string;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ pijama }) => {

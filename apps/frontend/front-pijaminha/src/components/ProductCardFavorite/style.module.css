@@ -1,0 +1,48 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 12px 12px 12px 0px #00000040;
+}
+
+.imgContainer {
+  position: relative;
+}
+
+.imgContainer > img:first-of-type {
+  position: absolute;
+  z-index: 1;
+  width: 2rem;
+  left: 0.75rem;
+  top: 0.75rem;
+}
+
+.imgContainer > img:last-of-type {
+  width: 12.5rem;
+  height: 20rem;
+  position: relative;
+}
+
+.textContainer {
+  background-color: var(--azul0);
+  height: 6.25rem;
+  width: 12.5rem;
+}
+
+.textContainer > p:first-of-type {
+  font-family: var(--font-numans);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-align: left;
+  padding-left: 0.6875rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.textContainer > p:last-of-type {
+  text-align: center;
+  font-family: var(--font-nunitoSans);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--azul400);
+  /* padding-top: 1rem; */
+}
