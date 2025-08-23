@@ -62,194 +62,201 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
   };
 
   const handlePurchase = async () => {
-  try {
-    const finalPrice = form.payment_method === "pix" ? total * 0.85 : total;
-    
-    const pajamasPayload = cart.map((item) => ({
-      pajamaId: String(item.id), 
-      size: item.size,           
-      quantity: item.quantity,
-      price: item.price,        
-    }));
+    try {
+      const finalPrice = form.payment_method === "pix" ? total * 0.85 : total;
 
-    await axios.post("http://localhost:3333/sales", {
-      buyer_name: form.buyer_name,
-      cpf: form.cpf,
-      price: finalPrice,
-      payment_method: form.payment_method,
-      installments: form.payment_method === "credit_card" ? form.installments : 1,
-      card_number: form.payment_method === "credit_card" ? form.card_number : null,
-      address: {
-        zip_code: form.zip_code,
-        state: form.state,
-        city: form.city,
-        neighborhood: form.neighborhood,
-        address: form.address,
-        number: form.number,
-      },
-      pajamas: pajamasPayload,
-    });
+      const pajamasPayload = cart.map((item) => ({
+        pajamaId: String(item.id),
+        size: item.size,
+        quantity: item.quantity,
+        price: item.price,
+      }));
 
-    setStep("sucesso");
-  } catch (error) {
-    console.error(error);
-    alert("Erro ao finalizar compra!");
-  }
-};
+      await axios.post("http://localhost:3333/sales", {
+        buyer_name: form.buyer_name,
+        cpf: form.cpf,
+        price: finalPrice,
+        payment_method: form.payment_method,
+        installments:
+          form.payment_method === "credit_card" ? form.installments : 1,
+        card_number:
+          form.payment_method === "credit_card" ? form.card_number : null,
+        address: {
+          zip_code: form.zip_code,
+          state: form.state,
+          city: form.city,
+          neighborhood: form.neighborhood,
+          address: form.address,
+          number: form.number,
+        },
+        pajamas: pajamasPayload,
+      });
+
+      setStep("sucesso");
+    } catch (error) {
+      console.error(error);
+      alert("Erro ao finalizar compra!");
+    }
+  };
   return (
     <div className={style.modalOverlay}>
-           {" "}
-      <div className={style.modal}>
-               {" "}
+         
+      <div className={step === "sucesso" ? style.modalComImagemFundo : style.modal}>
+           
         {step === "dados" && (
           <>
-                        <h2>Dados</h2>
-                       {" "}
-            <input
-              type="text"
-              name="buyer_name"
-              placeholder="Nome completo"
-              value={form.buyer_name}
-              onChange={handleChange}
-              required
-            />
-                       {" "}
-            <input
-              type="text"
-              name="cpf"
-              placeholder="CPF (somente números)"
-              value={form.cpf}
-              onChange={handleChange}
-              required
-            />
-                       {" "}
-            <input
-              type="text"
-              name="zip_code"
-              placeholder="CEP"
-              value={form.zip_code}
-              onChange={handleChange}
-              required
-            />
-                       {" "}
-            <input
-              type="text"
-              name="address"
-              placeholder="Logradouro"
-              value={form.address}
-              onChange={handleChange}
-              required
-            />
-                       {" "}
-            <div className={style.inlineInputs}>
-                           {" "}
+            <h2>Dados</h2>
+            <div className={style.Maior}>
               <input
                 type="text"
-                name="state"
-                placeholder="UF"
-                value={form.state}
+                name="buyer_name"
+                placeholder="Nome completo"
+                value={form.buyer_name}
                 onChange={handleChange}
                 required
               />
-                           {" "}
               <input
                 type="text"
-                name="city"
-                placeholder="Cidade"
-                value={form.city}
+                name="cpf"
+                placeholder="CPF (somente números)"
+                value={form.cpf}
                 onChange={handleChange}
                 required
               />
-                         {" "}
+              <input
+                type="text"
+                name="zip_code"
+                placeholder="CEP"
+                value={form.zip_code}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="address"
+                placeholder="Logradouro"
+                value={form.address}
+                onChange={handleChange}
+                required
+              />
             </div>
-                       {" "}
-            <div className={style.inlineInputs}>
-                           {" "}
-              <input
-                type="text"
-                name="number"
-                placeholder="Número"
-                value={form.number}
-                onChange={handleChange}
-                required
-              />
-                           {" "}
-              <input
-                type="text"
-                name="neighborhood"
-                placeholder="Bairro"
-                value={form.neighborhood}
-                onChange={handleChange}
-                required
-              />
-                         {" "}
+            <div className={style.Menor}>
+              <div className={style.inlineInputs}>
+                <div className={style.esquerda}>
+                  <input
+                    type="text"
+                    name="state"
+                    placeholder="UF"
+                    value={form.state}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className={style.direita}>
+                  <input
+                    type="text"
+                    name="city"
+                    placeholder="Cidade"
+                    value={form.city}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+              <div className={style.inlineInputs}>
+                <div className={style.esquerda}>
+                  <input
+                    type="text"
+                    name="number"
+                    placeholder="Número"
+                    value={form.number}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className={style.direita}>
+                  <input
+                    type="text"
+                    name="neighborhood"
+                    placeholder="Bairro"
+                    value={form.neighborhood}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+                <button className={style.Enviar} onClick={handleNext}>ENVIAR</button>    
             </div>
-                        <button onClick={handleNext}>ENVIAR</button>         {" "}
+                           
           </>
         )}
-               {" "}
+             
         {step === "pagamento" && (
           <>
-                        <h2>Pagamento</h2>           {" "}
-            <select
-              name="payment_method"
-              value={form.payment_method}
-              onChange={handleChange}
-            >
-                           {" "}
-              <option value="credit_card">Cartão de crédito</option>           
-                <option value="pix">PIX (-15%)</option>           {" "}
-            </select>
-                       {" "}
-            {form.payment_method === "credit_card" && (
-              <>
-                               {" "}
-                <select
-                  name="installments"
-                  value={form.installments}
-                  onChange={handleChange}
-                >
-                                   {" "}
-                  {[...Array(6)].map((_, i) => (
-                    <option key={i + 1} value={i + 1}>
-                                            Parcelamento x{i + 1}               
-                         {" "}
-                    </option>
-                  ))}
-                                 {" "}
-                </select>
-                               {" "}
-                <input
-                  type="text"
-                  name="card_number"
-                  placeholder="Número do cartão"
-                  value={form.card_number}
-                  onChange={handleChange}
-                  required
-                />
-                             {" "}
-              </>
-            )}
-                       {" "}
-            <div className={style.actions}>
-                           {" "}
-              <button onClick={() => setStep("dados")}>VOLTAR</button>         
-                  <button onClick={handlePurchase}>ENVIAR</button>           {" "}
+            <h2>Pagamento</h2>           
+            <div className={style.Pagamento}>
+              <select
+                name="payment_method"
+                value={form.payment_method}
+                onChange={handleChange}
+              >
+                       <option value="credit_card">Cartão de crédito</option>
+                        <option value="pix">PIX (-15%)</option>
+              </select>
+              
+              {form.payment_method === "credit_card" && (
+                <>
+              
+                  <select
+                    name="installments"
+                    value={form.installments}
+                    onChange={handleChange}
+                  >
+              
+                    {[...Array(6)].map((_, i) => (
+                      <option key={i + 1} value={i + 1}>
+                                              Parcelamento x{i + 1}
+                      </option>
+                    ))}
+              
+                  </select>
+              
+                  <div className={style.cartao}>
+                    <input
+                      type="text"
+                      name="card_number"
+                      placeholder="Número do cartão"
+                      value={form.card_number}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+              
+                </>
+              )}
             </div>
-                     {" "}
+                     
+            <div className={style.actions}>
+                         
+              <button className={style.seta} onClick={() => setStep("dados")}> <img src="/src/assets/icons/setaVoltar.png" alt="seta_voltar"/>VOLTAR</button>         
+                  <button onClick={handlePurchase}>ENVIAR</button>         
+            </div>
+                     
           </>
         )}
-               {" "}
+             
         {step === "sucesso" && (
           <div className={style.sucesso}>
-                        <h2>Sua compra foi concluída!</h2>           {" "}
-            <p>Obrigado por comprar conosco!</p>           {" "}
-            <button onClick={onClose}>Fechar</button>         {" "}
+                        <h3>Sua compra foi concluída!</h3>         
+            <p><em>Obrigado por comprar conosco!</em></p>         
+            <button onClick={onClose}>Fechar</button>       
           </div>
         )}
-             {" "}
+             
       </div>
-         {" "}
+       
     </div>
   );
 }
