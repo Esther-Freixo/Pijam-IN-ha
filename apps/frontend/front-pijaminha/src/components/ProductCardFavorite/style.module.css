@@ -13,7 +13,7 @@
   z-index: 1;
   width: 2rem;
   left: 0.75rem;
-  top: 0.75rem;
+  top: 1rem;
 }
 
 .imgContainer > img:last-of-type {
@@ -23,8 +23,12 @@
 }
 
 .textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
   background-color: var(--azul0);
-  height: 6.25rem;
+  height: 8rem;
   width: 12.5rem;
 }
 
@@ -38,6 +42,14 @@
   padding-bottom: 1rem;
 }
 
+.priceOnSale {
+  text-align: center;
+  color: var(--vermelho200);
+  text-decoration: line-through;
+  font-family: var(--font-nunitoSans);
+  font-size: 0.75rem;
+}
+
 .textContainer > p:last-of-type {
   text-align: center;
   font-family: var(--font-nunitoSans);
@@ -45,4 +57,10 @@
   font-size: 1.25rem;
   color: var(--azul400);
   /* padding-top: 1rem; */
+}
+
+.installmentPrice {
+  font-family: var(--font-nunitoSans);
+  font-size: 0.75rem;
+  color: var(--azul400);
 }
