@@ -24,16 +24,19 @@ export class PrismaSalesRepository implements SalesRepository {
     return sale
   }
 
-  async listAll(): Promise<Sale[]> {
-    const sales = await prisma.sale.findMany({
-      include: {
-        address: true,
-        pajamas: true,
+ async listAll() {
+  const sales = await prisma.sale.findMany({
+    include: {
+      pajamas: {
+        include: {
+          pajama: true, // Isso inclui os detalhes do pijama, se necessário.
+        },
       },
-    })
-
-    return sales
-  }
+      address: true, // Incluindo o endereço também para completar os dados
+    },
+  });
+  return sales;
+}
 
   async delete(id: string): Promise<void> {
     await prisma.sale.delete({ where: { id } })

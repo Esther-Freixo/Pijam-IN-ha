@@ -6,10 +6,10 @@ export async function list(request: FastifyRequest, reply: FastifyReply) {
     const salesRepository = new PrismaSalesRepository()
     const sales = await salesRepository.listAll()
 
-    // Add total quantity and total price per sale
     const enriched = sales.map(s => {
-      const totalQuantity = s.pajamas.reduce((acc: number, p: any) => acc + p.quantity, 0)
-      const totalPrice = s.pajamas.reduce((acc: number, p: any) => acc + (p.quantity * p.price), 0)
+    
+      const totalQuantity = s.pajamas.reduce((acc, p) => acc + p.quantity, 0)
+      const totalPrice = s.pajamas.reduce((acc, p) => acc + (p.quantity * p.price), 0)
       return { ...s, totalQuantity, totalPrice }
     })
 

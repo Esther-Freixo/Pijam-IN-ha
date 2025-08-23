@@ -1,3 +1,5 @@
+/* Seu arquivo de CSS global */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Numans&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playball&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
@@ -82,12 +84,12 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -101,53 +103,72 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+display: block;
 }
+
+/* ------------------ INÍCIO DA SOLUÇÃO DO FOOTER ------------------ */
+
+html,
 body {
-  line-height: 1;
+    line-height: 1;
+    height: 100%; /* Garante que o body ocupe a altura total da viewport */
 }
+
+#root, #seu-app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Torna o conteúdo principal flexível para ocupar o espaço */
+main {
+    flex-grow: 1;
+}
+
+/* ------------------ FIM DA SOLUÇÃO DO FOOTER ------------------ */
+
 ol,
 ul {
-  list-style: none;
+list-style: none;
 }
 blockquote,
 q {
-  quotes: none;
+quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
-  content: none;
+content: "";
+content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+border-collapse: collapse;
+border-spacing: 0;
 }
 
 :root {
-  --vermelho0: rgb(237, 142, 150);
-  --vermelho100: rgb(224, 106, 115);
-  --vermelho200: rgb(184, 41, 53);
-  --vermelho300: rgb(163, 22, 33);
-  --vermelho400: rgb(116, 1, 11);
-  --vermelho500: rgb(62, 0, 5);
-  --azul0: rgb(151, 195, 216);
-  --azul100: rgb(114, 167, 193);
-  --azul200: rgb(78, 128, 152);
-  --azul300: rgb(62, 103, 122);
-  --azul400: rgb(39, 69, 83);
-  --cinza0: rgb(245, 248, 255);
-  --cinza100: rgb(206, 211, 220);
-  --cinza200: rgb(164, 168, 176);
-  --cinza300: rgb(135, 136, 139);
-  --cinza400: rgb(95, 97, 101);
-  --preto: rgb(23, 23, 23);
-  --branco: rgb(252, 247, 248);
-  --font-montserrat: "Montserrat";
-  --font-numans: "Numans";
-  --font-nunitoSans: "Nunito Sans";
-  --font-robotoSerif: "Roboto serif";
-  --font-playball: "Playball";
+--vermelho0: rgb(237, 142, 150);
+--vermelho100: rgb(224, 106, 115);
+--vermelho200: rgb(184, 41, 53);
+--vermelho300: rgb(163, 22, 33);
+--vermelho400: rgb(116, 1, 11);
+--vermelho500: rgb(62, 0, 5);
+--azul0: rgb(151, 195, 216);
+--azul100: rgb(114, 167, 193);
+--azul200: rgb(78, 128, 152);
+--azul300: rgb(62, 103, 122);
+--azul400: rgb(39, 69, 83);
+--cinza0: rgb(245, 248, 255);
+--cinza100: rgb(206, 211, 220);
+--cinza200: rgb(164, 168, 176);
+--cinza300: rgb(135, 136, 139);
+--cinza400: rgb(95, 97, 101);
+--preto: rgb(23, 23, 23);
+--branco: rgb(252, 247, 248);
+--font-montserrat: "Montserrat";
+--font-numans: "Numans";
+--font-nunitoSans: "Nunito Sans";
+--font-robotoSerif: "Roboto serif";
+--font-playball: "Playball";
 }

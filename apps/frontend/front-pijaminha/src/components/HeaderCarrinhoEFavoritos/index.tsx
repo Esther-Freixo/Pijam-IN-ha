@@ -19,7 +19,7 @@ export default function HeaderCarrinhoEFavoritos({
   const navigate = useNavigate();
   return (
     <section className={style.section}>
-      <div onClick={() => navigate("/")} className={style.carrinhoContainer}>
+      <div onClick={() => navigate("/carrinho")} className={style.carrinhoContainer}>
         <img
           src={carrinhoPage ? carrinhoIconVermelho : carrinhoIconCinza}
           alt="Icone de carrinho"

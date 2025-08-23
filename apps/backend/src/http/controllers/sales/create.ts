@@ -12,7 +12,7 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
     price: z.number().positive(),
     payment_method: z.string(),
     installments: z.number().optional(),
-    card_number: z.string().optional(),
+    card_number: z.string().nullable().optional(), // `nullable` para aceitar `null`
     address: z.object({
       zip_code: z.string(),
       state: z.string(),
@@ -22,7 +22,7 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
       number: z.string(),
     }),
     pajamas: z.array(z.object({
-      pajamaId: z.string().uuid(),
+      pajamaId: z.string(), // Corrigido para string
       size: z.string().optional(),
       quantity: z.number().min(1),
       price: z.number().positive(),

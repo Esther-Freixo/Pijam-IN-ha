@@ -1,0 +1,38 @@
+
+.cartPage {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/backgorund/fundoazulhorizontal.png");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.cartSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 49px;
+  gap: 48px;
+}
+
+.cartSummary p {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "Outfit", sans-serif;
+}
+
+.cartSummary button {
+  background-color: #72a8c1;
+  width: 308px;
+  height: 93px;
+  border-radius: 10px;
+  border: none;
+  font-size: 32px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: white;
+}

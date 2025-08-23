@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify'
 import { PrismaSalesRepository } from '../../../repositories/prisma/prisma-sales-repository.ts'
-import { ResourceNotFoundError } from '../../../errors/resource-not-find-error.ts'
+//import { ResourceNotFoundError } from '../../../errors/resource-not-find-error.ts'
 
 export async function getDetails(request: FastifyRequest, reply: FastifyReply) {
   const params = request.params as any

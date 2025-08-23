@@ -1,103 +1,90 @@
-.cartItemContainer {
-  background-image: url('../../assets/images/background.png'); /* Assumindo um background de padrão ZZZ */
-  background-repeat: repeat;
-  border: 1px solid #B0C4DE;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
 
 .cartItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 22px 48px 48px 48px;
 }
 
-.cartItem img {
+.itemImage{
     width: 182px;
     height: 273px;
+    box-shadow: 4px 4px 12px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.pijamaInfo {
-  display: flex;
-  align-items: center;
+.itemDetails{
+    display: flex;
+    flex-direction: column;
+    height: 273px;
+    justify-content: space-between;
+
 }
 
-.pijamaImage {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-right: 20px;
+.itemDetails h3 {
+    color: #274553;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: "Nunito Sans", sans-serif
+    ;
+}
+ .itemControls {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 43px;
+ }
+
+ .Esquerda{
+    display: flex;
+    align-items: center;
+    gap: 43px;
+    justify-content: center;
+
+ }
+
+.Tamanho {
+  background-color: #3E677A;
+  width: 50px;
+  height: 51px;
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
 }
 
-.details {
-  display: flex;
-  flex-direction: column;
+.Tamanho p{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Nunito Sans", sans-serif;
+    color: white
+    ;
 }
 
-.details h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0;
+ .Direita{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 273px;
+ }
+
+.Direita:last-child{
+    display: flex;
 }
 
-.ref {
-  font-size: 0.9rem;
-  color: #777;
-  margin: 5px 0;
+.removeButton{
+    border: none;
+    background: none;
 }
 
-.sizeTag {
-  background-color: #B0C4DE;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-weight: bold;
-  width: min-content;
+.removeButton img {
+    width: 27px;
+    height: 27px;
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-}
-
-.removeButton {
-  background-color: transparent;
-  border: none;
-  font-size: 1.5rem;
-  color: #777;
-  cursor: pointer;
-  margin-left: 20px;
-}
-
-.quantityAndPrice {
-  display: flex;
-  align-items: center;
-}
-
-.quantitySection {
-  text-align: center;
-  margin-right: 20px;
-}
-
-.quantitySection p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.stockMessage {
-  font-size: 0.8rem;
-  color: #555;
-  margin-top: 5px;
-}
-
-.stockMessage span {
-  font-weight: bold;
-  color: #000;
-}
-
-.itemPrice {
-  font-size: 1.5rem;
-  font-weight: bold;
+.itemSubtotal {
+    color: #171717;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Nunito Sans", sans-serif;
 }
