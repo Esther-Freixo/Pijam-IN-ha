@@ -10,6 +10,8 @@ interface ProductCardFavoriteProps {
 export default function ProductCardFavorite({
   pijama,
 }: ProductCardFavoriteProps) {
+  const priceOnSale = pijama.price * ((100 - (pijama.sale_percent ?? 0)) / 100);
+
   const navigate = useNavigate();
   return (
     <>
@@ -23,7 +25,21 @@ export default function ProductCardFavorite({
         </div>
         <div className={style.textContainer}>
           <p>{pijama.name.toUpperCase()}</p>
-          <p>R$ {pijama.price.toString().replace(".", ",")}</p>
+          {pijama.on_sale && (
+            <span className={style.priceOnSale}>
+              R$ {pijama.price.toFixed(2).toString().replace(".", ",")}
+            </span>
+          )}
+          <p>
+            R${" "}
+            {(pijama.on_sale ? priceOnSale : pijama.price)
+              .toFixed(2)
+              .toString()
+              .replace(".", ",")}
+          </p>
+          <span className={style.installmentPrice}>
+            6x de R${(pijama.price / 6).toFixed(2)}
+          </span>
         </div>
       </section>
     </>

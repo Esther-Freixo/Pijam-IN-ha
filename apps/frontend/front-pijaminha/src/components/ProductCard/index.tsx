@@ -16,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ pijama }) => {
   const navigate = useNavigate();
   const { id, name, image, price, on_sale, sale_percent, favorite } = pijama;
 
-  const priceOnSale = price * (1 - (sale_percent ?? 0));
+  const priceOnSale = price * ((100 - (sale_percent ?? 0)) / 100);
   const valorFinal = priceOnSale || price;
   const valorParcela = valorFinal / 6;
 
@@ -26,9 +26,25 @@ const ProductCard: React.FC<ProductCardProps> = ({ pijama }) => {
     navigate(`/pijamas/${id}`);
   };
 
-  const handleFavoriteClick = (e: React.MouseEvent) => {
+  const handleFavoriteClick = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    setIsFavorited((prev) => !prev);
+    try {
+      const response = await fetch(
+        `http://localhost:3333/pajamas/${pijama.id}/favorite`,
+        {
+          method: "PATCH",
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setIsFavorited(data.pajama.favorite);
+        console.log("funcionou");
+      } else {
+        alert("Erro ao atualizar favorito");
+      }
+    } catch (error) {
+      console.error("Erro de conexão com o servidor", error);
+    }
   };
 
   return (
