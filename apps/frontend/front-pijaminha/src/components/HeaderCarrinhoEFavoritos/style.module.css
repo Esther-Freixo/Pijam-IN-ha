@@ -1,11 +1,11 @@
 .section {
   display: flex;
   align-items: center;
-  /* height: 11.125rem; */
+
   gap: 1rem;
   padding-left: 3rem;
-  padding-top: 5.1875rem;
-  padding-bottom: 2.5rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
   background-color: var(--branco);
   font-family: var(--font-numans);
 }

@@ -1,0 +1,50 @@
+.section {
+  background-image: url("../../assets/backgorund/fundoazulhorizontal.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  /* padding-left: 4.375rem; */
+  padding-top: 2rem;
+  padding-bottom: 9.375rem;
+}
+
+.section img {
+  object-fit: contain;
+  width: 1.25rem;
+  cursor: pointer;
+}
+
+.carouselWrapper {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slideLeft {
+  animation: slideLeftAnim 0.5s;
+}
+
+.slideRight {
+  animation: slideRightAnim 0.5s;
+}
+
+@keyframes slideLeftAnim {
+  0% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRightAnim {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

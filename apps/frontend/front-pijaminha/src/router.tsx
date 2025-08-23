@@ -24,10 +24,8 @@ const router = createBrowserRouter([
       { path: "cadastro", element: <Cadastro /> },
       { path: "pijamas/:pijamaId", element: <Pijama /> },
       { path: "lista_pijamas", element: <Lista_Pijamas /> },
-      { path: "carrinho", element: <Carrinho/> },
-      { path: "favoritos",
-        element: <Favoritos />,
-      },
+      { path: "favoritos", element: <Favoritos /> },
+      { path: "carrinho", element: <Carrinho /> },
     ],
   },
 ]);
