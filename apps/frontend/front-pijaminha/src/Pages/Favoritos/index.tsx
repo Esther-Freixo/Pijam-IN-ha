@@ -40,7 +40,12 @@ export default function Favoritos() {
     );
   };
 
-  const visiblePijamas = pijamas.slice(startIndex, startIndex + cardsPerView);
+  const favoritesPijamas = pijamas.filter((pijama) => pijama.favorite);
+
+  const visiblePijamas = favoritesPijamas.slice(
+    startIndex,
+    startIndex + cardsPerView
+  );
 
   return (
     <>
@@ -61,7 +66,7 @@ export default function Favoritos() {
           onAnimationEnd={() => setDirection(null)}
         >
           {visiblePijamas.map((pijama) => (
-            <ProductCardFavorite pijama={pijama} />
+            <ProductCardFavorite key={pijama.id} pijama={pijama} />
           ))}
         </div>
         <img onClick={handleNext} src={setaDireita} alt="" />

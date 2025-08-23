@@ -45,7 +45,8 @@ export default function Pijama() {
       if (response.ok) {
         const data = await response.json();
         setIsFavorited(data.pajama.favorite);
-        console.log("funcionou");
+        const favoritos = pijamas.filter((pijama) => pijama.favorite === true);
+        console.log(favoritos);
       } else {
         alert("Erro ao atualizar favorito");
       }
